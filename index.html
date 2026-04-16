@@ -878,10 +878,49 @@
       html { scroll-behavior: auto; }
     }
 
+    /* HAMBURGER */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--navy);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1000;
+        padding: 2rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1.25rem; }
+      .nav-cta { margin-top: 1rem; }
       .hero { padding: 7rem 1.5rem 4rem; }
       .hero::after { font-size: 8rem; right: 1rem; }
       .nationality-strip { padding: 1.5rem; }
@@ -906,6 +945,9 @@
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">My Spanish <span>NLV</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="/what-is-nlv.html">What Is It</a></li>
       <li><a href="/requirements.html">Requirements</a></li>
@@ -915,6 +957,25 @@
       <li><a href="https://dashboard.platinumlegalspain.com/nlv" class="nav-cta" rel="noopener">Start Application</a></li>
     </ul>
   </nav>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  </script>
 
   <main id="main">
 
