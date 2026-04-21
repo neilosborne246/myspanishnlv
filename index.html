@@ -59,7 +59,7 @@
         "url": "https://myspanishnlv.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://myspanishnlv.com/assets/logo.png",
+          "url": "https://myspanishnlv.com/assets/logo-square-dark.png",
           "width": 512,
           "height": 512
         },
@@ -268,13 +268,14 @@
       border-bottom: 1px solid var(--border-dark);
     }
     .nav-logo {
-      font-family: var(--ff-display);
-      font-size: 1.15rem;
-      color: var(--white);
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      letter-spacing: 0.02em;
     }
-    .nav-logo span { color: var(--yellow); }
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+    }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; margin: 0; padding: 0; }
     .nav-links a {
       color: var(--text-muted-light);
@@ -840,28 +841,64 @@
     footer {
       background: var(--navy);
       border-top: 1px solid var(--border-dark);
-      padding: 3rem 4rem;
+      padding: 4rem 4rem 2rem;
     }
-    .footer-inner {
+    .footer-grid {
       max-width: 1100px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
     }
-    .footer-logo { font-family: var(--ff-display); font-size: 1rem; color: var(--white); }
-    .footer-logo span { color: var(--yellow); }
-    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .footer-links a {
+    .footer-col {}
+    .footer-logo { margin-bottom: 1rem; }
+    .footer-logo img { height: 28px; width: auto; }
+    .footer-tagline { font-size: 0.88rem; color: var(--text-muted-light); line-height: 1.6; margin-bottom: 1.25rem; }
+    .footer-email a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .footer-email a:hover { color: var(--white); }
+    .footer-heading {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .footer-list { list-style: none; }
+    .footer-list li { margin-bottom: 0.6rem; }
+    .footer-list a {
       color: var(--text-muted-light);
       text-decoration: none;
       font-size: 0.85rem;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--white); }
-    .footer-copy { font-size: 0.8rem; color: var(--text-muted-light); }
+    .footer-list a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted-light); }
+    .footer-legal { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-legal a {
+      color: var(--text-muted-light);
+      text-decoration: none;
+      font-size: 0.78rem;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--white); }
 
     /* ANIMATIONS */
     @keyframes fadeUp {
@@ -900,7 +937,6 @@
     .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
     .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
     /* MOBILE MENU OVERLAY */
     .mobile-menu {
       display: none;
@@ -912,9 +948,11 @@
       background: #0c1930;
       z-index: 10000;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 0;
+      padding-top: 4.5rem;
+      overflow-y: auto;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu-close {
@@ -948,20 +986,52 @@
     }
     .mobile-menu a:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
     .mobile-menu a:hover { background: rgba(255,255,255,0.05); }
-    .mobile-menu-cta {
-      background: var(--red) !important;
-      font-weight: 600 !important;
-      border-bottom: none !important;
-      margin-top: 1rem;
+    /* MOBILE MENU — bottom pill section */
+    .mobile-menu-bottom {
+      width: 100%;
+      padding: 1.5rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: auto;
     }
-    .mobile-menu-contact {
-      font-size: 0.9rem !important;
-      text-transform: none !important;
-      color: var(--yellow) !important;
-      letter-spacing: 0.02em !important;
-      border-bottom: none !important;
+    .mobile-menu-bottom .mm-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted-light);
+      text-align: center;
       margin-top: 0.5rem;
     }
+    .mobile-menu-pill {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--r-pill);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .mobile-menu-pill.pill-red {
+      background: var(--red);
+      color: var(--white);
+    }
+    .mobile-menu-pill.pill-red:hover { background: var(--red-deep); }
+    .mobile-menu-pill.pill-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .mobile-menu-pill.pill-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+    .mobile-menu-pill.pill-yellow {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+    .mobile-menu-pill.pill-yellow:hover { background: #e8bf30; }
 
     /* MOBILE STICKY BAR */
     .mobile-bar {
@@ -1015,8 +1085,9 @@
       .links-grid { grid-template-columns: 1fr; }
       .cta-banner { padding: 3.5rem 1.5rem; }
       .cta-inner { flex-direction: column; align-items: flex-start; }
-      footer { padding: 2rem 1.5rem; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+      footer { padding: 3rem 1.5rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
       .hero-stats { gap: 2rem; }
     }
   </style>
@@ -1026,7 +1097,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo">My Spanish <span>NLV</span></a>
+    <a href="/" class="nav-logo"><img src="/assets/logo-horizontal-dark.png" alt="My Spanish NLV" /></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1040,7 +1111,7 @@
     </ul>
   </nav>
 
-  <!-- MOBILE MENU OVERLAY (outside nav to escape stacking context) -->
+  <!-- MOBILE MENU OVERLAY -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
     <a href="/what-is-nlv.html">What Is It</a>
@@ -1048,8 +1119,15 @@
     <a href="/pricing.html">Pricing</a>
     <a href="/process.html">Process</a>
     <a href="/faq.html">FAQ</a>
-    <a href="https://dashboard.platinumlegalspain.com/nlv" class="mobile-menu-cta" rel="noopener">Start Application</a>
-    <a href="mailto:hola@myspanishvisa.com" class="mobile-menu-contact">hola@myspanishvisa.com</a>
+    <a href="/contact.html">Contact</a>
+    <div class="mobile-menu-bottom">
+      <a href="https://dashboard.platinumlegalspain.com/nlv" class="mobile-menu-pill pill-red" rel="noopener">Start Application →</a>
+      <a href="mailto:hola@myspanishvisa.com" class="mobile-menu-pill pill-outline">Email Us</a>
+      <a href="/contact.html" class="mobile-menu-pill pill-outline">Contact Us</a>
+      <p class="mm-label">Other Visa Types</p>
+      <a href="https://myspanishdnv.com" class="mobile-menu-pill pill-yellow" rel="noopener">Digital Nomad Visa (DNV)</a>
+      <a href="https://myspanishstudentvisa.com" class="mobile-menu-pill pill-yellow" rel="noopener">Student Visa</a>
+    </div>
   </div>
 
   <script>
@@ -1475,20 +1553,57 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">My Spanish <span>NLV</span></div>
-      <div class="footer-links">
-        <a href="/what-is-nlv.html">What Is the NLV</a>
-        <a href="/requirements.html">Requirements</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/process.html">Process</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/legal/privacy-policy.html">Privacy</a>
-        <a href="/legal/terms-of-service.html">Terms</a>
-        <a href="https://platinumlegalspain.com" rel="noopener">Platinum Legal Spain</a>
+    <div class="footer-grid">
+      <!-- Column 1: Brand + contact -->
+      <div class="footer-col">
+        <div class="footer-logo"><img src="/assets/logo-horizontal-dark.png" alt="My Spanish NLV" /></div>
+        <p class="footer-tagline">Spain's Non-Lucrative Visa — apply online with real Spanish immigration lawyers at Platinum Legal Spain.</p>
+        <p class="footer-email"><a href="mailto:hola@myspanishvisa.com">hola@myspanishvisa.com</a></p>
       </div>
-      <p class="footer-contact"><a href="mailto:hola@myspanishvisa.com" style="color:var(--yellow);text-decoration:none;">hola@myspanishvisa.com</a></p>
+      <!-- Column 2: Site links -->
+      <div class="footer-col">
+        <p class="footer-heading">NLV Guide</p>
+        <ul class="footer-list">
+          <li><a href="/what-is-nlv.html">What Is the NLV</a></li>
+          <li><a href="/requirements.html">Requirements</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Column 3: Other visa types + services -->
+      <div class="footer-col">
+        <p class="footer-heading">Other Visa Types</p>
+        <ul class="footer-list">
+          <li><a href="https://myspanishdnv.com" rel="noopener">Digital Nomad Visa (DNV)</a></li>
+          <li><a href="https://myspanishstudentvisa.com" rel="noopener">Student Visa</a></li>
+        </ul>
+        <p class="footer-heading" style="margin-top:1.5rem;">Services</p>
+        <ul class="footer-list">
+          <li><a href="https://spanish-healthinsurance.com" rel="noopener">Health Insurance</a></li>
+          <li><a href="https://247expatinsurance.com" rel="noopener">Expat Insurance</a></li>
+          <li><a href="https://dashboard.platinumlegalspain.com/nlv" rel="noopener">Start Application</a></li>
+        </ul>
+      </div>
+      <!-- Column 4: Company -->
+      <div class="footer-col">
+        <p class="footer-heading">Company</p>
+        <ul class="footer-list">
+          <li><a href="https://platinumlegalspain.com" rel="noopener">Platinum Legal Spain</a></li>
+          <li><a href="/about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Legal bar -->
+    <div class="footer-bottom">
       <p class="footer-copy">© 2026 My Spanish NLV. Legal services provided by Platinum Legal Spain.</p>
+      <div class="footer-legal">
+        <a href="/legal/legal-statement.html">Legal Statement</a>
+        <a href="/legal/terms-and-conditions.html">Terms and Conditions</a>
+        <a href="/legal/privacy-policy.html">Privacy Policy</a>
+        <a href="/legal/cookies-policy.html">Cookies Policy</a>
+      </div>
     </div>
   </footer>
 
