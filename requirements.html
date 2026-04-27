@@ -1186,8 +1186,8 @@ footer.site-footer {
       const navToggle = document.querySelector('.nav-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileClose = document.getElementById('mobileMenuClose');
-  function openMenu() { mobileMenu.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeMenu() { mobileMenu.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function openMenu() { mobileMenu.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); document.body.classList.add('menu-open'); }
+  function closeMenu() { mobileMenu.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); }
   navToggle?.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
   mobileClose?.addEventListener('click', closeMenu);
   mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
