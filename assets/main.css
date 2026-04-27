@@ -625,7 +625,8 @@ footer.site-footer {
 
 /* ─── RESPONSIVE ──────────────────────────────────────── */
 @media (max-width: 900px) {
-  nav.site-nav { padding: 1rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  nav.site-nav { padding: 1rem 1.5rem; flex-direction: row; align-items: center; }
+  .nav-logo img { height: 60px; }
   .nav-toggle { display: flex; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; margin-left: auto; }
   .nav-toggle span { width: 25px; height: 2px; background: var(--yellow); transition: all 0.3s ease; }
   .nav-links { display: none !important; flex-direction: column; gap: 0; width: 100%; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-dark); }
@@ -636,7 +637,7 @@ footer.site-footer {
   .mobile-bar  { display: flex; }
   body         { padding-bottom: 4.5rem; }
   .nav-desktop { display: none !important; }
-  .page-hero   { padding: 7rem 1.5rem 3.5rem; }
+  .page-hero   { padding: 6rem 1.5rem 3.5rem; }
   section      { padding: 4rem 1.5rem; }
   .cta-banner  { padding: 3.5rem 1.5rem; }
   .cta-inner   { flex-direction: column; align-items: flex-start; }
