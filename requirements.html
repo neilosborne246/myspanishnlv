@@ -572,6 +572,7 @@ details p, details div.answer {
   border-radius: var(--r-lg); padding: 2.5rem;
 }
 .info-card h3 { font-family: var(--ff-display); font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--yellow); }
+.info-card p, .info-card li { color: var(--text-muted-light); }
 .info-row {
   display: flex; justify-content: space-between; align-items: center;
   padding: .85rem 0; border-bottom: 1px solid rgba(255,255,255,.06);
@@ -796,8 +797,7 @@ footer.site-footer {
 
   <!-- NAV -->
   <nav class="site-nav">
-    <a href="/" class="nav-logo">
-      <img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" height="108" />
+    <a href="/" class="nav-logo"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" />
     </a>
     <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
       <span class="hamburger-bar"></span>
@@ -814,6 +814,19 @@ footer.site-footer {
       <li><a href="https://dashboard.platinumlegalspain.com/nlv" class="nav-cta" rel="noopener noreferrer">Start My Application</a></li>
     </ul>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation">&#x2715;</button>
+    <a href="/what-is-nlv.html">What is the NLV?</a>
+    <a href="/requirements.html">Requirements</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/how-it-works.html">How It Works</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/blog/">Guides</a>
+    <div class="mobile-menu-bottom">
+      <a href="https://dashboard.platinumlegalspain.com/nlv" class="mm-pill pill-red" rel="noopener noreferrer">Start My Application</a>
+      <a href="/contact.html" class="mm-pill pill-outline">Contact Us</a>
+    </div>
+  </div>
 
   <main id="main">
 
@@ -1170,13 +1183,14 @@ footer.site-footer {
   </footer>
 
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-links');
-    toggle?.addEventListener('click', () => {
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      menu.classList.toggle('open');
-    });
+      const navToggle = document.querySelector('.nav-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileMenuClose');
+  function openMenu() { mobileMenu.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  navToggle?.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+  mobileClose?.addEventListener('click', closeMenu);
+  mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 
     <!-- Start cookieyes banner -->
