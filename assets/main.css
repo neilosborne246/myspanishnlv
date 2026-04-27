@@ -494,6 +494,17 @@ footer.site-footer {
 .footer-legal a { color: var(--text-muted-light); text-decoration: none; font-size: .78rem; transition: color .2s; }
 .footer-legal a:hover { color: var(--white); }
 
+/* Footer visa-type pills */
+.footer-pill {
+  display: block; text-align: center;
+  background: var(--yellow); color: var(--navy);
+  padding: .45rem 1rem; border-radius: var(--r-pill);
+  font-size: .78rem; font-weight: 600;
+  text-decoration: none; margin-bottom: .45rem;
+  transition: opacity .2s;
+}
+.footer-pill:hover { opacity: .82; }
+
 /* ─── UTILITY ─────────────────────────────────────────── */
 .mt-1 { margin-top: .5rem; }
 .mt-2 { margin-top: 1rem; }
