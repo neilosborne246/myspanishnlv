@@ -155,508 +155,7 @@
     }
     </script>
 
-    <style>
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e7e3;
-            --medium-gray: #999;
-            --dark-gray: #333;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-
-        a {
-            color: var(--red);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--navy);
-            text-decoration: underline;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -9999px;
-            z-index: 999;
-        }
-
-        .skip-link:focus {
-            top: 0;
-            left: 0;
-            background: var(--navy);
-            color: var(--white);
-            padding: 8px 16px;
-        }
-
-        header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 16px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            color: var(--white);
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        .breadcrumb {
-            background: var(--light-gray);
-            padding: 16px;
-            font-size: 14px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .breadcrumb a {
-            color: var(--red);
-        }
-
-        .breadcrumb span {
-            color: var(--medium-gray);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 16px;
-        }
-
-        h1 {
-            color: var(--navy);
-            font-size: 32px;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .intro-text {
-            font-size: 18px;
-            color: var(--dark-gray);
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-
-        .warning-box {
-            background-color: #fff3cd;
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .warning-box h3 {
-            color: #d32f2f;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .warning-box p {
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        .warning-box strong {
-            color: #d32f2f;
-        }
-
-        .info-box {
-            background-color: #e3f2fd;
-            border-left: 4px solid #1976d2;
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .info-box h3 {
-            color: #1976d2;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .info-box p {
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        h2 {
-            color: var(--navy);
-            font-size: 28px;
-            margin-top: 48px;
-            margin-bottom: 24px;
-            line-height: 1.3;
-            border-bottom: 3px solid var(--yellow);
-            padding-bottom: 12px;
-        }
-
-        h3 {
-            color: var(--navy);
-            font-size: 20px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        ul, ol {
-            margin-left: 24px;
-            margin-bottom: 24px;
-        }
-
-        li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .step-box {
-            background-color: var(--cream);
-            border-left: 4px solid var(--red);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .step-box h4 {
-            color: var(--red);
-            margin-bottom: 12px;
-            font-size: 16px;
-        }
-
-        .timeline {
-            margin: 32px 0;
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 24px;
-            gap: 20px;
-        }
-
-        .timeline-number {
-            background-color: var(--red);
-            color: var(--white);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .timeline-content h4 {
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            margin-bottom: 0;
-        }
-
-        .checklist {
-            background-color: var(--cream);
-            padding: 24px;
-            border-radius: 4px;
-            margin: 32px 0;
-        }
-
-        .checklist h3 {
-            margin-top: 0;
-            color: var(--red);
-        }
-
-        .checklist ul {
-            margin-left: 24px;
-        }
-
-        .checklist li {
-            margin-bottom: 12px;
-        }
-
-        .checklist li:before {
-            content: "✓ ";
-            color: var(--red);
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .faq-section {
-            margin-top: 48px;
-        }
-
-        .faq-item {
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--light-gray);
-            padding-bottom: 24px;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .faq-question:hover {
-            color: var(--red);
-        }
-
-        .faq-answer {
-            color: var(--dark-gray);
-            line-height: 1.8;
-            display: none;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .faq-toggle {
-            color: var(--red);
-            font-weight: bold;
-            min-width: 20px;
-        }
-
-        .cta-section {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 24px;
-            border-radius: 4px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            border-bottom-color: var(--yellow);
-            margin-top: 0;
-        }
-
-        .cta-section p {
-            color: var(--cream);
-            font-size: 18px;
-            margin-bottom: 24px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--red);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--navy);
-            text-decoration: none;
-        }
-
-        .btn-secondary {
-            background-color: var(--yellow);
-            color: var(--navy);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        .btn-white {
-            background-color: var(--white);
-            color: var(--navy);
-        }
-
-        .btn-white:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 16px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        footer p {
-            margin-bottom: 12px;
-            color: var(--cream);
-        }
-
-        footer a {
-            color: var(--yellow);
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--navy);
-            padding: 12px 16px;
-            z-index: 99;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-        }
-
-        .sticky-bar.visible {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .sticky-bar .btn {
-            padding: 12px 24px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-
-            .intro-text {
-                font-size: 16px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 24px 12px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            header {
-                padding: 12px;
-            }
-
-            .breadcrumb {
-                font-size: 12px;
-                padding: 12px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .timeline-item {
-                gap: 12px;
-            }
-
-            .timeline-number {
-                width: 36px;
-                height: 36px;
-                font-size: 14px;
-            }
-
-            .warning-box {
-                padding: 16px;
-            }
-        }
-    </style>
+    
         <!-- Related Guides -->
         <section style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--light-gray);">
             <h2 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">Related Guides</h2>
@@ -951,125 +450,65 @@
         <section class="faq-section">
             <h2>Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I switch health insurance providers during NLV renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, you can switch health insurance providers during your NLV renewal, but only if executed perfectly. The new insurance must become active on the exact same day your old policy expires. Not the day after—the same day. Any gap, even one hour, will result in automatic renewal denial.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I switch health insurance providers during NLV renewal?</summary>
+  <p>Yes, you can switch health insurance providers during your NLV renewal, but only if executed perfectly. The new insurance must become active on the exact same day your old policy expires. Not the day after—the same day. Any gap, even one hour, will result in automatic renewal denial.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What happens if there's a gap when switching insurance?
-                </div>
-                <div class="faq-answer">
-                    <p>If your coverage lapses for even one day during the transition, your renewal application will be automatically denied. Spanish authorities use a blacklist system that flags every day without coverage. There is no exception process—the denial is permanent for that renewal cycle.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What happens if there's a gap when switching insurance?</summary>
+  <p>If your coverage lapses for even one day during the transition, your renewal application will be automatically denied. Spanish authorities use a blacklist system that flags every day without coverage. There is no exception process—the denial is permanent for that renewal cycle.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    How long before renewal should I start planning the switch?
-                </div>
-                <div class="faq-answer">
-                    <p>Begin planning your insurance switch at least 4-6 weeks before your renewal appointment. This gives you time to research providers, apply for new insurance, confirm approval, and coordinate exact coverage transition dates with both the old and new insurers. Rushing this process is how most gaps occur.</p>
-                </div>
-            </div>
+            <details>
+  <summary>How long before renewal should I start planning the switch?</summary>
+  <p>Begin planning your insurance switch at least 4-6 weeks before your renewal appointment. This gives you time to research providers, apply for new insurance, confirm approval, and coordinate exact coverage transition dates with both the old and new insurers. Rushing this process is how most gaps occur.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if my new insurance doesn't approve in time?
-                </div>
-                <div class="faq-answer">
-                    <p>If your new insurance is delayed, you have two options: (1) extend your old policy for another month to avoid any gap, then switch when new insurance is confirmed, or (2) postpone your renewal appointment until new insurance is approved and you can transition seamlessly. Never let a gap occur just to meet a deadline.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if my new insurance doesn't approve in time?</summary>
+  <p>If your new insurance is delayed, you have two options: (1) extend your old policy for another month to avoid any gap, then switch when new insurance is confirmed, or (2) postpone your renewal appointment until new insurance is approved and you can transition seamlessly. Never let a gap occur just to meet a deadline.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I overlap insurance coverage (days of both active)?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, overlapping coverage is actually the safest approach. Have your new insurance start one day before your old policy expires, creating one day of overlap. This is infinitely safer than trying to time it perfectly. Most insurers allow you to backdate policies by a few days to accommodate this.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I overlap insurance coverage (days of both active)?</summary>
+  <p>Yes, overlapping coverage is actually the safest approach. Have your new insurance start one day before your old policy expires, creating one day of overlap. This is infinitely safer than trying to time it perfectly. Most insurers allow you to backdate policies by a few days to accommodate this.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    How do I coordinate with my insurance providers?
-                </div>
-                <div class="faq-answer">
-                    <p>Contact both insurers in writing (email) to document coverage dates. Inform old insurer of exact cancellation date. Confirm with new insurer their policy starts on that exact date. Request written confirmation from both. Follow up 1 week before renewal to verify new policy is active and old policy has terminated as planned.</p>
-                </div>
-            </div>
+            <details>
+  <summary>How do I coordinate with my insurance providers?</summary>
+  <p>Contact both insurers in writing (email) to document coverage dates. Inform old insurer of exact cancellation date. Confirm with new insurer their policy starts on that exact date. Request written confirmation from both. Follow up 1 week before renewal to verify new policy is active and old policy has terminated as planned.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if I'm switching to a cheaper insurance to save money?
-                </div>
-                <div class="faq-answer">
-                    <p>Never let cost savings drive you to create a coverage gap. The risk of renewal denial far outweighs any monthly savings. Plan your switch during renewal only if you can afford the overlap and have time to do it carefully. If in doubt, keep your existing insurance through renewal and switch after your new permit is issued.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I'm switching to a cheaper insurance to save money?</summary>
+  <p>Never let cost savings drive you to create a coverage gap. The risk of renewal denial far outweighs any monthly savings. Plan your switch during renewal only if you can afford the overlap and have time to do it carefully. If in doubt, keep your existing insurance through renewal and switch after your new permit is issued.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can my old insurer refuse to provide an end date?
-                </div>
-                <div class="faq-answer">
-                    <p>This is rare but can happen. If your insurer is uncooperative, offer to pay for one extra month of coverage beyond your intended cancellation date. This buys you time and guarantees no gap. The cost of extra coverage is minimal compared to renewal denial.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can my old insurer refuse to provide an end date?</summary>
+  <p>This is rare but can happen. If your insurer is uncooperative, offer to pay for one extra month of coverage beyond your intended cancellation date. This buys you time and guarantees no gap. The cost of extra coverage is minimal compared to renewal denial.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Should I switch to a more expensive but 'safer' insurance?
-                </div>
-                <div class="faq-answer">
-                    <p>If your current insurance is unreliable or you're unsure about their customer service, switching to a more reputable provider with better English support can reduce stress. Just execute the transition perfectly. However, don't switch simply for minor improvements—the transition itself carries more risk than most existing policies.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Should I switch to a more expensive but 'safer' insurance?</summary>
+  <p>If your current insurance is unreliable or you're unsure about their customer service, switching to a more reputable provider with better English support can reduce stress. Just execute the transition perfectly. However, don't switch simply for minor improvements—the transition itself carries more risk than most existing policies.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if I realize mid-switch I made a mistake?
-                </div>
-                <div class="faq-answer">
-                    <p>If you realize there's going to be a gap before it happens, immediately extend your old insurance to prevent it. Call your old insurer and ask to delay cancellation. Most will accommodate this to avoid an administrative gap. This is the emergency fix—better to pay for extra coverage than have a gap.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I realize mid-switch I made a mistake?</summary>
+  <p>If you realize there's going to be a gap before it happens, immediately extend your old insurance to prevent it. Call your old insurer and ask to delay cancellation. Most will accommodate this to avoid an administrative gap. This is the emergency fix—better to pay for extra coverage than have a gap.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I use a broker to manage the switch?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, using an insurance broker can reduce your stress and ensure coordination. Brokers are experienced at managing transitions and can pressure insurers to provide exact dates. However, ultimately you're responsible for verifying dates. Don't assume the broker handled everything—confirm with both insurers directly.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I use a broker to manage the switch?</summary>
+  <p>Yes, using an insurance broker can reduce your stress and ensure coordination. Brokers are experienced at managing transitions and can pressure insurers to provide exact dates. However, ultimately you're responsible for verifying dates. Don't assume the broker handled everything—confirm with both insurers directly.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What documents should I keep after switching?
-                </div>
-                <div class="faq-answer">
-                    <p>Keep written confirmation from both insurers showing coverage dates. Keep copies of policy documents for both old and new insurance. Keep proof of cancellation and proof of new policy activation. Keep bank statements showing payment to new insurer. Keep all emails confirming dates. These documents protect you if there's any dispute about gaps.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What documents should I keep after switching?</summary>
+  <p>Keep written confirmation from both insurers showing coverage dates. Keep copies of policy documents for both old and new insurance. Keep proof of cancellation and proof of new policy activation. Keep bank statements showing payment to new insurer. Keep all emails confirming dates. These documents protect you if there's any dispute about gaps.</p>
+</details>
         </section>
 
         <div class="cta-section">
@@ -1117,16 +556,6 @@
         });
 
         // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const toggle = this.querySelector('.faq-toggle');
-
-                answer.classList.toggle('active');
-                toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-            });
-        });
     </script>
 </body>
 </html>

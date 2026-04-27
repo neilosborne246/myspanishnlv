@@ -40,460 +40,7 @@
     }
     </script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e6e0;
-            --dark-gray: #4a4a4a;
-            --border-radius: 8px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: var(--navy);
-            background-color: var(--cream);
-            line-height: 1.7;
-        }
-
-        nav {
-            background-color: var(--navy);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav a {
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-right: 2rem;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--red) 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-family: "Bricolage Grotesque", sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .header-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        .breadcrumb {
-            max-width: 1000px;
-            margin: 1.5rem auto 0;
-            padding: 0 2rem;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .breadcrumb a {
-            color: var(--yellow);
-            text-decoration: none;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        /* Table of Contents */
-        .toc {
-            background: white;
-            border-left: 4px solid var(--yellow);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 3rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .toc h2 {
-            color: var(--navy);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .toc ol {
-            list-style-position: inside;
-            color: var(--dark-gray);
-        }
-
-        .toc li {
-            margin-bottom: 0.5rem;
-        }
-
-        .toc a {
-            color: var(--navy);
-            text-decoration: none;
-            border-bottom: 1px solid var(--yellow);
-        }
-
-        .toc a:hover {
-            color: var(--red);
-        }
-
-        /* Content Sections */
-        section {
-            margin-bottom: 3rem;
-        }
-
-        h2 {
-            font-family: "Bricolage Grotesque", sans-serif;
-            font-size: 1.8rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-family: "Bricolage Grotesque", sans-serif;
-            font-size: 1.3rem;
-            color: var(--navy);
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-        }
-
-        strong {
-            color: var(--navy);
-            font-weight: 600;
-        }
-
-        /* Info/Warning Boxes */
-        .info-box {
-            background: #e7f3ff;
-            border-left: 4px solid #0066cc;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: var(--border-radius);
-        }
-
-        .warning-box {
-            background: #fff3cd;
-            border-left: 4px solid var(--yellow);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: var(--border-radius);
-        }
-
-        .success-box {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: var(--border-radius);
-        }
-
-        .info-box p, .warning-box p, .success-box p {
-            margin-bottom: 0;
-        }
-
-        /* Lists */
-        ul, ol {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-gray);
-        }
-
-        li {
-            margin-bottom: 0.75rem;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-            margin: 2rem 0;
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            padding-left: 3rem;
-            position: relative;
-        }
-
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background-color: var(--red);
-            border-radius: 50%;
-            border: 3px solid var(--cream);
-            box-shadow: 0 0 0 3px var(--red);
-        }
-
-        .timeline-item:after {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 20px;
-            width: 4px;
-            height: calc(100% + 20px);
-            background-color: var(--light-gray);
-        }
-
-        .timeline-item:last-child:after {
-            display: none;
-        }
-
-        .timeline-title {
-            font-weight: 700;
-            color: var(--navy);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-duration {
-            color: var(--red);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Cost Breakdown */
-        .cost-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .cost-table th {
-            background-color: var(--navy);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 700;
-        }
-
-        .cost-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .cost-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .cost-table tr:hover {
-            background-color: #f9f8f6;
-        }
-
-        .cost-amount {
-            color: var(--red);
-            font-weight: 700;
-        }
-
-        /* FAQ */
-        .faq-item {
-            background: white;
-            border: 1px solid var(--light-gray);
-            margin-bottom: 1rem;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            background-color: #f9f8f6;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--navy);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background-color: var(--light-gray);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            margin-bottom: 0.75rem;
-        }
-
-        /* CTA Box */
-        .cta-box {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--red) 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .cta-box h2 {
-            color: white;
-            margin-top: 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 0.85rem 2.5rem;
-            background-color: var(--yellow);
-            color: var(--navy);
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            font-weight: 700;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background-color: #f0c800;
-            transform: scale(1.05);
-        }
-
-        /* Related Links */
-        .related-links {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin: 3rem 0;
-        }
-
-        .related-links h2 {
-            margin-top: 0;
-        }
-
-        .related-links ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .related-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .related-links a {
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid var(--yellow);
-            transition: all 0.3s ease;
-        }
-
-        .related-links a:hover {
-            color: var(--red);
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            main {
-                padding: 0 1.5rem;
-            }
-
-            nav a {
-                display: block;
-                margin-bottom: 0.5rem;
-                margin-right: 0;
-            }
-
-            .timeline-item {
-                padding-left: 2rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 2rem 1rem;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .cost-table th, .cost-table td {
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-
-            .cta-box {
-                padding: 1.5rem 1rem;
-            }
-        }
-    </style>
+    
 </head>
 <body>
     <nav>
@@ -877,105 +424,55 @@
         <section id="faq">
             <h2>Frequently Asked Questions About BLS</h2>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Can I apply directly at the Spanish consulate instead of BLS?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>In most countries, no — BLS is mandatory. Spain's consulates have delegated visa processing to BLS in 150+ countries. A few exceptions may exist where direct applications are still possible, but this is increasingly rare. Always check your country's consulate website to confirm the current process.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>In most countries, no — BLS is mandatory. Spain's consulates have delegated visa processing to BLS in 150+ countries. A few exceptions may exist where direct applications are still possible, but this is increasingly rare. Always check your country's consulate website to confirm the current process.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>How long does BLS processing take?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>From BLS appointment to receiving your visa: 30-60 days on average. The timeline breaks down as: 1-10 days for BLS to forward to consulate, 30-50 days for consulate to process, 5-10 days for BLS to return your passport. Peak season (Jan-March) can extend this to 90 days.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>From BLS appointment to receiving your visa: 30-60 days on average. The timeline breaks down as: 1-10 days for BLS to forward to consulate, 30-50 days for consulate to process, 5-10 days for BLS to return your passport. Peak season (Jan-March) can extend this to 90 days.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Can I book a BLS appointment online?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, all BLS offices offer online appointment booking through their country-specific websites (linked in our BLS Directory). You create an account, choose your preferred date/time, and receive a confirmation email.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>Yes, all BLS offices offer online appointment booking through their country-specific websites (linked in our BLS Directory). You create an account, choose your preferred date/time, and receive a confirmation email.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>What if I'm missing a document when I arrive at BLS?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>BLS will not accept your application if any required document is missing. You'll be asked to reschedule your appointment after obtaining the missing document. This can add 2-4 weeks to your timeline. Always verify completeness before your appointment.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>BLS will not accept your application if any required document is missing. You'll be asked to reschedule your appointment after obtaining the missing document. This can add 2-4 weeks to your timeline. Always verify completeness before your appointment.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Do I need a courier service for passport return?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, it's optional. Most people pick up their passport in person at the BLS office (free). If you prefer not to travel back to the BLS office, you can pay €15-40 extra for courier delivery to your address. Check your country's BLS site for courier availability.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>No, it's optional. Most people pick up their passport in person at the BLS office (free). If you prefer not to travel back to the BLS office, you can pay €15-40 extra for courier delivery to your address. Check your country's BLS site for courier availability.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Can I track my application status online?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes. You'll receive a BLS tracking number when your documents are submitted. Log into your country's BLS website and enter your tracking number to check status. Status updates typically appear 1-2 weeks after submission, then periodically as your application moves through consulate review.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>Yes. You'll receive a BLS tracking number when your documents are submitted. Log into your country's BLS website and enter your tracking number to check status. Status updates typically appear 1-2 weeks after submission, then periodically as your application moves through consulate review.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>What happens if my application is rejected?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The consulate will provide a rejection reason. Common reasons: insufficient income documentation, missing documents, criminal record issues, or incomplete forms. The visa fee is non-refundable. You can reapply once you've addressed the rejection reason, but you'll pay the fee again.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>The consulate will provide a rejection reason. Common reasons: insufficient income documentation, missing documents, criminal record issues, or incomplete forms. The visa fee is non-refundable. You can reapply once you've addressed the rejection reason, but you'll pay the fee again.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>How soon after approval can I travel to Spain?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Once your visa is stamped in your passport, you have 90 days to travel to Spain. You should travel before this window expires. Upon arrival in Spain, you have 30 days to register for your Padron and book your TIE appointment at the police station.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>Once your visa is stamped in your passport, you have 90 days to travel to Spain. You should travel before this window expires. Upon arrival in Spain, you have 30 days to register for your Padron and book your TIE appointment at the police station.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Can family members apply with me at the same BLS appointment?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Each family member needs a separate BLS appointment (they can't use your single appointment slot). However, you can often book appointments on the same day at the same BLS office. Each person needs their own complete set of documents and pays their own visa fee.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>Each family member needs a separate BLS appointment (they can't use your single appointment slot). However, you can often book appointments on the same day at the same BLS office. Each person needs their own complete set of documents and pays their own visa fee.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>What's the difference between BLS and a visa agency (like ours)?</span>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>BLS is the official government-contracted visa application processor. A visa agency like My Spanish NLV helps you prepare your application, gather documents, complete forms correctly, and navigate the process — but you still must submit through BLS. Our service reduces rejection risk and speeds up the process through expert guidance.</p>
-                </div>
-            </div>
+            <details>
+  <summary></summary>
+  <p>BLS is the official government-contracted visa application processor. A visa agency like My Spanish NLV helps you prepare your application, gather documents, complete forms correctly, and navigate the process — but you still must submit through BLS. Our service reduces rejection risk and speeds up the process through expert guidance.</p>
+</details>
         </section>
 
         <!-- CTA -->

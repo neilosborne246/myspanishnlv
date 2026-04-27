@@ -144,423 +144,7 @@
     }
     </script>
 
-    <style>
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e7e4;
-            --text-dark: #2a2a2a;
-            --text-light: #666;
-            --border-color: #ddd;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text-dark);
-            background-color: var(--cream);
-            line-height: 1.6;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--navy);
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        header {
-            background-color: var(--navy);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--yellow);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background-color: var(--navy);
-                gap: 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem 1.5rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            flex: 1;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: var(--navy);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid var(--red);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            color: var(--red);
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .warning-box {
-            background-color: #fff3cd;
-            border-left: 4px solid #ff9800;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .warning-box h3 {
-            color: #d35400;
-            margin-top: 0;
-        }
-
-        .info-box {
-            background-color: #e3f2fd;
-            border-left: 4px solid var(--navy);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .info-box h3 {
-            color: var(--navy);
-            margin-top: 0;
-        }
-
-        .highlight-box {
-            background-color: #f0f0f0;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .timeline {
-            margin: 2rem 0;
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 2rem;
-            gap: 1.5rem;
-        }
-
-        .timeline-number {
-            background-color: var(--red);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .timeline-content h3 {
-            margin-top: 0;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background-color: white;
-        }
-
-        .comparison-table th {
-            background-color: var(--navy);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .comparison-table tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .checklist {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .checklist li {
-            padding: 0.8rem 0 0.8rem 2.5rem;
-            position: relative;
-            margin-bottom: 0.5rem;
-        }
-
-        .checklist li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--red);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .faq-section {
-            margin: 3rem 0;
-        }
-
-        .faq-item {
-            background-color: white;
-            border: 1px solid var(--border-color);
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background-color: var(--light-gray);
-            padding: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            transition: background-color 0.3s;
-        }
-
-        .faq-question:hover {
-            background-color: #ddd;
-        }
-
-        .faq-question h4 {
-            color: var(--navy);
-            font-size: 1rem;
-            margin: 0;
-            flex: 1;
-        }
-
-        .faq-toggle {
-            color: var(--red);
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-
-        .faq-toggle.open {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s;
-        }
-
-        .faq-answer.open {
-            padding: 1.2rem;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            margin: 0;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--red);
-            color: white;
-            padding: 0.9rem 1.8rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .cta-button:hover {
-            background-color: #9a000d;
-        }
-
-        .cta-container {
-            background-color: var(--navy);
-            color: white;
-            padding: 2rem 1.5rem;
-            border-radius: 4px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .cta-container h3 {
-            color: var(--yellow);
-            margin-top: 0;
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--navy);
-            padding: 1rem;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-
-        .sticky-bar.active {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            .sticky-bar.active {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        footer {
-            background-color: var(--navy);
-            color: white;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            margin-top: 3rem;
-        }
-
-        footer a {
-            color: var(--yellow);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    
         <!-- Related Guides -->
         <section style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--light-gray);">
             <h2 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">Related Guides</h2>
@@ -894,115 +478,60 @@
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq-section">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What happens if my NLV expires while I'm waiting for my renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>If your NLV expires while your renewal application is pending, you technically lose your legal residence status. However, Spain recognizes a de facto grace period during renewal processing. You should remain in Spain and keep your proof of renewal appointment. This is why registering with the town hall (Padrón) is critical—it creates documentation of your residence intent.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>What happens if my NLV expires while I'm waiting for my renewal?</h4></summary>
+  <p>If your NLV expires while your renewal application is pending, you technically lose your legal residence status. However, Spain recognizes a de facto grace period during renewal processing. You should remain in Spain and keep your proof of renewal appointment. This is why registering with the town hall (Padrón) is critical—it creates documentation of your residence intent.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Is there an official grace period after my NLV expires?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Spain does not have a formal, published grace period. However, the renewal system relies on the assumption that some applicants' permits will expire before their renewal is processed. The key is that you must have a proof of appointment document showing your renewal was applied for before expiration. This demonstrates your intent to renew and is typically accepted by authorities.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>Is there an official grace period after my NLV expires?</h4></summary>
+  <p>Spain does not have a formal, published grace period. However, the renewal system relies on the assumption that some applicants' permits will expire before their renewal is processed. The key is that you must have a proof of appointment document showing your renewal was applied for before expiration. This demonstrates your intent to renew and is typically accepted by authorities.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Can I leave Spain if my NLV has expired but my renewal is pending?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No—this is the biggest risk. If you leave Spain while your permit is expired and your renewal is still pending, you may not be allowed to re-enter. The renewal is tied to your physical presence in Spain. If you must travel, contact your consulate before leaving to understand the implications for your specific situation.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>Can I leave Spain if my NLV has expired but my renewal is pending?</h4></summary>
+  <p>No—this is the biggest risk. If you leave Spain while your permit is expired and your renewal is still pending, you may not be allowed to re-enter. The renewal is tied to your physical presence in Spain. If you must travel, contact your consulate before leaving to understand the implications for your specific situation.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What documents should I keep if my NLV expires during renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Keep your original appointment document (proof of renewal application), your expired NLV, your Padrón registration (town hall certificate of residence), proof of health insurance, proof of income, proof of housing, and any correspondence from the consulate. These documents establish that you applied for renewal before expiration and create a record of continuous residence and compliance.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>What documents should I keep if my NLV expires during renewal?</h4></summary>
+  <p>Keep your original appointment document (proof of renewal application), your expired NLV, your Padrón registration (town hall certificate of residence), proof of health insurance, proof of income, proof of housing, and any correspondence from the consulate. These documents establish that you applied for renewal before expiration and create a record of continuous residence and compliance.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Will my expired NLV cause problems with banks or employers?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Possibly. Banks may freeze accounts or require updated legal residence documentation. Employers may have concerns about your work authorization status. The best approach is to inform them proactively: "My renewal is being processed; I have my appointment documentation." Your Padrón registration helps demonstrate continuous legal residence intent, even if your physical permit has expired.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>Will my expired NLV cause problems with banks or employers?</h4></summary>
+  <p>Possibly. Banks may freeze accounts or require updated legal residence documentation. Employers may have concerns about your work authorization status. The best approach is to inform them proactively: "My renewal is being processed; I have my appointment documentation." Your Padrón registration helps demonstrate continuous legal residence intent, even if your physical permit has expired.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What if I missed the deadline and didn't apply for renewal before expiration?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>This is more serious. You would technically be in Spain illegally. You should contact your consulate immediately to understand your options. Some consulates may allow a late renewal application if you can demonstrate you were in the process of renewing. However, this carries legal risk and may result in denial or deportation proceedings. This scenario is preventable with proper timeline management.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>What if I missed the deadline and didn't apply for renewal before expiration?</h4></summary>
+  <p>This is more serious. You would technically be in Spain illegally. You should contact your consulate immediately to understand your options. Some consulates may allow a late renewal application if you can demonstrate you were in the process of renewing. However, this carries legal risk and may result in denial or deportation proceedings. This scenario is preventable with proper timeline management.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>How does the Padrón help if my NLV expires during renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The Padrón is a town hall registration of your residence. It's not a legal residence permit, but it's official documentation of your address and continuous presence in Spain. If your NLV expires while renewal is pending, your Padrón registration demonstrates intent to remain in Spain legally and is often accepted by authorities, banks, and employers as evidence of continued residence.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>How does the Padrón help if my NLV expires during renewal?</h4></summary>
+  <p>The Padrón is a town hall registration of your residence. It's not a legal residence permit, but it's official documentation of your address and continuous presence in Spain. If your NLV expires while renewal is pending, your Padrón registration demonstrates intent to remain in Spain legally and is often accepted by authorities, banks, and employers as evidence of continued residence.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What happens to my health insurance if my NLV expires?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Your health insurance status depends on the insurance provider and type. Private insurance typically remains valid even if your permit expires, as long as you continue payments. Public healthcare access may be affected since it's linked to legal residence status. Contact your insurance provider immediately to confirm coverage and your options.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>What happens to my health insurance if my NLV expires?</h4></summary>
+  <p>Your health insurance status depends on the insurance provider and type. Private insurance typically remains valid even if your permit expires, as long as you continue payments. Public healthcare access may be affected since it's linked to legal residence status. Contact your insurance provider immediately to confirm coverage and your options.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Can I renew my NLV if I didn't apply before it expired?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>This depends on the consulate's policies. Some consulates will not process renewals for permits that have already expired—only new applications. You may need to apply for a new NLV from outside Spain (more difficult) or consulate may allow an "exceptional" renewal if you can demonstrate extenuating circumstances. Contact your consulate immediately for guidance.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>Can I renew my NLV if I didn't apply before it expired?</h4></summary>
+  <p>This depends on the consulate's policies. Some consulates will not process renewals for permits that have already expired—only new applications. You may need to apply for a new NLV from outside Spain (more difficult) or consulate may allow an "exceptional" renewal if you can demonstrate extenuating circumstances. Contact your consulate immediately for guidance.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Will an expired NLV during renewal affect my next renewal application?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>It shouldn't, provided your first renewal was approved. The approval date and issuance of your new permit is what matters legally. However, some consulates keep records of applications and may flag accounts that have had lapses. The best approach is to plan your timeline so your renewal appointment occurs 2-3 months before expiration, giving processing time before your permit expires.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>Will an expired NLV during renewal affect my next renewal application?</h4></summary>
+  <p>It shouldn't, provided your first renewal was approved. The approval date and issuance of your new permit is what matters legally. However, some consulates keep records of applications and may flag accounts that have had lapses. The best approach is to plan your timeline so your renewal appointment occurs 2-3 months before expiration, giving processing time before your permit expires.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What should I do if my renewal appointment is scheduled after my current NLV expires?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Contact the consulate immediately to request an earlier appointment. Explain that your current permit expires before the scheduled appointment date. Many consulates will accommodate this request. If they cannot, ask in writing about the grace period policy and what documentation you should keep. Getting this in writing protects you.</p>
-                </div>
-            </div>
+            <details>
+  <summary><h4>What should I do if my renewal appointment is scheduled after my current NLV expires?</h4></summary>
+  <p>Contact the consulate immediately to request an earlier appointment. Explain that your current permit expires before the scheduled appointment date. Many consulates will accommodate this request. If they cannot, ask in writing about the grace period policy and what documentation you should keep. Getting this in writing protects you.</p>
+</details>
         </div>
 
         <h2>Next Steps</h2>

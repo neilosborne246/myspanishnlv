@@ -144,416 +144,7 @@
     }
     </script>
 
-    <style>
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e7e4;
-            --text-dark: #2a2a2a;
-            --text-light: #666;
-            --border-color: #ddd;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text-dark);
-            background-color: var(--cream);
-            line-height: 1.6;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--navy);
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        header {
-            background-color: var(--navy);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--yellow);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background-color: var(--navy);
-                gap: 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem 1.5rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            flex: 1;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: var(--navy);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid var(--red);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            color: var(--red);
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .info-box {
-            background-color: #e3f2fd;
-            border-left: 4px solid var(--navy);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .info-box h3 {
-            color: var(--navy);
-            margin-top: 0;
-        }
-
-        .highlight-box {
-            background-color: #f0f0f0;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background-color: white;
-        }
-
-        .comparison-table th {
-            background-color: var(--navy);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .comparison-table tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .comparison-table .same-color {
-            background-color: #e8f5e9;
-        }
-
-        .comparison-table .different-color {
-            background-color: #fff3e0;
-        }
-
-        .checklist {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .checklist li {
-            padding: 0.8rem 0 0.8rem 2.5rem;
-            position: relative;
-            margin-bottom: 0.5rem;
-        }
-
-        .checklist li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--red);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .column-box {
-            background-color: white;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-        }
-
-        .column-box h3 {
-            margin-top: 0;
-            color: var(--navy);
-        }
-
-        @media (max-width: 900px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .faq-section {
-            margin: 3rem 0;
-        }
-
-        .faq-item {
-            background-color: white;
-            border: 1px solid var(--border-color);
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background-color: var(--light-gray);
-            padding: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            transition: background-color 0.3s;
-        }
-
-        .faq-question:hover {
-            background-color: #ddd;
-        }
-
-        .faq-question h4 {
-            color: var(--navy);
-            font-size: 1rem;
-            margin: 0;
-            flex: 1;
-        }
-
-        .faq-toggle {
-            color: var(--red);
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-
-        .faq-toggle.open {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s;
-        }
-
-        .faq-answer.open {
-            padding: 1.2rem;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            margin: 0;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--red);
-            color: white;
-            padding: 0.9rem 1.8rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .cta-button:hover {
-            background-color: #9a000d;
-        }
-
-        .cta-container {
-            background-color: var(--navy);
-            color: white;
-            padding: 2rem 1.5rem;
-            border-radius: 4px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .cta-container h3 {
-            color: var(--yellow);
-            margin-top: 0;
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--navy);
-            padding: 1rem;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-
-        .sticky-bar.active {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            .sticky-bar.active {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        footer {
-            background-color: var(--navy);
-            color: white;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            margin-top: 3rem;
-        }
-
-        footer a {
-            color: var(--yellow);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    
         <!-- Related Guides -->
         <section style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--light-gray);">
             <h2 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">Related Guides</h2>
@@ -924,119 +515,60 @@
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq-section">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Is my second NLV renewal easier than my first?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>In some ways, yes. You have a proven track record of 1-2 years of successful residence in Spain. Consulates have less to verify about your lifestyle and integration. However, the core requirements (income, reserves, housing, health insurance) are identical. Your second renewal is faster in processing but not easier in terms of requirements. You're essentially proving the same thing again: that you can support yourself in Spain.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Is my second NLV renewal easier than my first?</summary>
+  <p>In some ways, yes. You have a proven track record of 1-2 years of successful residence in Spain. Consulates have less to verify about your lifestyle and integration. However, the core requirements (income, reserves, housing, health insurance) are identical. Your second renewal is faster in processing but not easier in terms of requirements. You're essentially proving the same thing again: that you can support yourself in Spain.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What changes between first and second renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>The main differences: (1) You have 1-2 years of residence history in Spain to demonstrate (bank records show you've spent time there), (2) Consulate may request fewer documentation items because they already know you, (3) Medical certificate is less commonly required on second renewal unless you're nearing retirement age, (4) Processing may be faster—typically 4-8 weeks rather than 6-12 weeks for first renewal, (5) Income and reserves thresholds stay the same but you may be in a stronger position financially.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What changes between first and second renewal?</summary>
+  <p>The main differences: (1) You have 1-2 years of residence history in Spain to demonstrate (bank records show you've spent time there), (2) Consulate may request fewer documentation items because they already know you, (3) Medical certificate is less commonly required on second renewal unless you're nearing retirement age, (4) Processing may be faster—typically 4-8 weeks rather than 6-12 weeks for first renewal, (5) Income and reserves thresholds stay the same but you may be in a stronger position financially.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Will the consulate process my second renewal faster?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Generally yes, but not dramatically faster. Your first renewal typically takes 6-12 weeks. Your second renewal typically takes 4-8 weeks. The reduction comes from the fact that the consulate already knows you and doesn't need to verify basic facts about your residence. However, this varies significantly by consulate. Some process all renewals on similar timelines regardless of whether it's your first or fifth.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Will the consulate process my second renewal faster?</summary>
+  <p>Generally yes, but not dramatically faster. Your first renewal typically takes 6-12 weeks. Your second renewal typically takes 4-8 weeks. The reduction comes from the fact that the consulate already knows you and doesn't need to verify basic facts about your residence. However, this varies significantly by consulate. Some process all renewals on similar timelines regardless of whether it's your first or fifth.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Do I need a medical certificate for my second renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Not usually—unless your consulate specifically requests one, unless you're over 55-60, or unless something in your first renewal was flagged. Medical certificates are primarily required for first renewals or when applicants approach retirement age. Your consulate should tell you if they need one during your appointment. If you're over 55-60, plan on needing one—this is the most common trigger for required medical certificates on renewals.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Do I need a medical certificate for my second renewal?</summary>
+  <p>Not usually—unless your consulate specifically requests one, unless you're over 55-60, or unless something in your first renewal was flagged. Medical certificates are primarily required for first renewals or when applicants approach retirement age. Your consulate should tell you if they need one during your appointment. If you're over 55-60, plan on needing one—this is the most common trigger for required medical certificates on renewals.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Can I use the same documents for my second renewal as my first?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No. Your documents need to be current and dated within the renewal period. For example, if your first renewal was 1-2 years ago, your bank statements from that time are outdated. You need new documentation showing current income, reserves, housing, and health insurance status. However, the *type* of documentation is the same—don't introduce new document types unless requested.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I use the same documents for my second renewal as my first?</summary>
+  <p>No. Your documents need to be current and dated within the renewal period. For example, if your first renewal was 1-2 years ago, your bank statements from that time are outdated. You need new documentation showing current income, reserves, housing, and health insurance status. However, the *type* of documentation is the same—don't introduce new document types unless requested.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What if my circumstances changed since my first renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>This is critical to address. If your income changed, reserves changed, housing changed, family status changed, or health status changed, you need to document the current situation. Changes are not automatically rejections, but they must be explained and justified. For example, if your income is now lower, explain why and show that it's still above the €1,080 minimum. If your housing changed, provide new documentation of your current residence.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if my circumstances changed since my first renewal?</summary>
+  <p>This is critical to address. If your income changed, reserves changed, housing changed, family status changed, or health status changed, you need to document the current situation. Changes are not automatically rejections, but they must be explained and justified. For example, if your income is now lower, explain why and show that it's still above the €1,080 minimum. If your housing changed, provide new documentation of your current residence.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Is the income requirement (€1,080) the same for my second renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, the €1,080 monthly income requirement is identical for all renewals. Your first renewal requires €1,080, your second requires €1,080, and every renewal thereafter requires €1,080. The €16,200 reserves requirement is also identical across all renewals. The requirements don't change—only your proof of meeting them changes with new documents.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Is the income requirement (€1,080) the same for my second renewal?</summary>
+  <p>Yes, the €1,080 monthly income requirement is identical for all renewals. Your first renewal requires €1,080, your second requires €1,080, and every renewal thereafter requires €1,080. The €16,200 reserves requirement is also identical across all renewals. The requirements don't change—only your proof of meeting them changes with new documents.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Will the consulate remember me from my first renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Possibly, but don't count on it. Consulates process many applicants. However, they will have your file with your first renewal details. This means they can compare your current documentation to your previous history. If you showed €30,000 in reserves last time and now show €8,000, that raises questions. Your history with them—especially any issues or complications—will be on record.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Will the consulate remember me from my first renewal?</summary>
+  <p>Possibly, but don't count on it. Consulates process many applicants. However, they will have your file with your first renewal details. This means they can compare your current documentation to your previous history. If you showed €30,000 in reserves last time and now show €8,000, that raises questions. Your history with them—especially any issues or complications—will be on record.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What if I was denied on my first renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>If your first renewal was denied, you cannot immediately reapply. Depending on the reason for denial, you'll typically need 3-6 months to address the issue and then reapply. If it was income-related, spend 3-6 months rebuilding savings. If it was a health issue, spend 3-6 months addressing it. If it was documentation, gather complete documentation immediately. Your denial will be on record, so your reapplication (even if it's technically your 'second' attempt) will be scrutinized carefully.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I was denied on my first renewal?</summary>
+  <p>If your first renewal was denied, you cannot immediately reapply. Depending on the reason for denial, you'll typically need 3-6 months to address the issue and then reapply. If it was income-related, spend 3-6 months rebuilding savings. If it was a health issue, spend 3-6 months addressing it. If it was documentation, gather complete documentation immediately. Your denial will be on record, so your reapplication (even if it's technically your 'second' attempt) will be scrutinized carefully.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>Can I switch visa categories on my second renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, if you're eligible. For example, if you were on a standard NLV (€1,080 income required) and now qualify for Convenio Especial (€1,080 from EU/EEA pension), you can switch on your renewal. This requires notifying your consulate 4+ weeks in advance and providing documentation of your new income source. Switching categories is easier on a renewal than applying fresh, as you have a proven residence history.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I switch visa categories on my second renewal?</summary>
+  <p>Yes, if you're eligible. For example, if you were on a standard NLV (€1,080 income required) and now qualify for Convenio Especial (€1,080 from EU/EEA pension), you can switch on your renewal. This requires notifying your consulate 4+ weeks in advance and providing documentation of your new income source. Switching categories is easier on a renewal than applying fresh, as you have a proven residence history.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h4>What documentation should I start gathering now for my second renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-question">
-                    <h4>What documentation should I start gathering now for my second renewal?</h4>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Begin 2-3 months before your renewal appointment: (1) 3 months of current bank statements, (2) Proof of current income (pension statements, rental income, employment letter), (3) Current health insurance documentation, (4) Current housing documentation (rental contract or property proof), (5) Recent tax documents (if self-employed), (6) Any government or official correspondence showing your address, (7) Proof of utilities in your name, (8) Your valid passport. Medical certificate and criminal record check will be ordered by the consulate if needed.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What documentation should I start gathering now for my second renewal?</summary>
+  <p>Begin 2-3 months before your renewal appointment: (1) 3 months of current bank statements, (2) Proof of current income (pension statements, rental income, employment letter), (3) Current health insurance documentation, (4) Current housing documentation (rental contract or property proof), (5) Recent tax documents (if self-employed), (6) Any government or official correspondence showing your address, (7) Proof of utilities in your name, (8) Your valid passport. Medical certificate and criminal record check will be ordered by the consulate if needed.</p>
+</details>
         </div>
 
         <h2>Preparing for Your Second Renewal</h2>
@@ -1058,15 +590,53 @@
         <p>Having everything prepared in advance means your second renewal appointment will go smoothly and your processing time will likely be at the faster end of the 4-8 week range.</p>
     </main>
 
-    <div class="sticky-bar">
-        <a href="https://dashboard.platinumlegalspain.com/nlv-renewal" class="cta-button">Start Renewal</a>
-        <a href="https://dashboard.platinumlegalspain.com/nlv-renewal" class="cta-button">Book a Call</a>
-    </div>
+    <div class="mobile-bar"><a href="https://dashboard.platinumlegalspain.com/nlv" class="bar-apply" rel="noopener noreferrer">Start My Application</a><a href="/contact.html" class="bar-contact">Contact Us</a></div>
 
-    <footer>
-        <p>&copy; 2026 My Spanish NLV. All rights reserved.</p>
-        <p><a href="https://myspanishnlv.com/what-is-nlv.html">What is NLV?</a></p>
-    </footer>
+    <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" /></a></div>
+      <p class="footer-tagline">Spain's Non-Lucrative Visa — online application service managed by experienced immigration specialists at Platinum Legal Spain.</p>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-list">
+        <li><a href="/services/non-lucrative-visa-application.html">NLV Application</a></li>
+        <li><a href="/services/non-lucrative-visa-renewal.html">NLV Renewal</a></li>
+        <li><a href="/services/family-application.html">Family Application</a></li>
+        <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-list">
+        <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+        <li><a href="/requirements.html">Requirements</a></li>
+        <li><a href="/how-it-works.html">How It Works</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <ul class="footer-list">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 My Spanish NLV / Platinum Legal Spain. Information only &mdash; not legal advice.</p>
+    <nav class="footer-legal" aria-label="Legal links">
+      <a href="/legal/privacy-policy.html">Privacy Policy</a>
+      <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="/legal/cookie-policy.html">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
 
     <script>
         // Mobile menu toggle

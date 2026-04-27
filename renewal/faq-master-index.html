@@ -22,391 +22,7 @@
     }
     </script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e6e0;
-            --dark-gray: #4a4a4a;
-            --border-radius: 8px;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: var(--navy);
-            background-color: var(--cream);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--navy);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav a {
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-right: 2rem;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--red) 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .header-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Main container */
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        /* Search bar */
-        .search-container {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .search-box {
-            display: flex;
-            gap: 1rem;
-        }
-
-        #faqSearch {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        #faqSearch:focus {
-            outline: none;
-            border-color: var(--red);
-        }
-
-        .search-btn {
-            padding: 0.75rem 1.5rem;
-            background-color: var(--red);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .search-btn:hover {
-            background-color: #a00010;
-        }
-
-        /* Category filters */
-        .filters {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .filter-btn {
-            padding: 0.5rem 1rem;
-            background-color: var(--light-gray);
-            border: 2px solid transparent;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover {
-            background-color: var(--navy);
-            color: white;
-        }
-
-        .filter-btn.active {
-            background-color: var(--red);
-            color: white;
-            border-color: var(--red);
-        }
-
-        /* FAQ Categories */
-        .faq-category {
-            background: white;
-            margin-bottom: 2rem;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .category-header {
-            background-color: var(--navy);
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .category-icon {
-            font-size: 1.5rem;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--yellow);
-            color: var(--navy);
-            border-radius: 50%;
-            font-weight: bold;
-        }
-
-        .category-title {
-            font-size: 1.3rem;
-            flex: 1;
-        }
-
-        .question-count {
-            background-color: var(--red);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* FAQ Items */
-        .faq-item {
-            border-bottom: 1px solid var(--light-gray);
-            padding: 1.5rem;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: var(--navy);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0;
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: var(--red);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            display: none;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--light-gray);
-            color: var(--dark-gray);
-            line-height: 1.8;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .faq-answer ul, .faq-answer ol {
-            margin: 1rem 0 1rem 2rem;
-        }
-
-        .faq-answer li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Stats */
-        .faq-stats {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--red);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--red);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-        }
-
-        /* No results message */
-        .no-results {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: var(--dark-gray);
-        }
-
-        .no-results p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Related Guides */
-        .related-guides {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--light-gray);
-        }
-
-        .related-guides h2 {
-            color: var(--navy);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .guide-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .guide-card h3 {
-            color: var(--red);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .guide-card p {
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .guide-card a {
-            color: var(--navy);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .search-box {
-                flex-direction: column;
-            }
-
-            .search-btn {
-                width: 100%;
-            }
-
-            main {
-                padding: 0 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 2rem 1rem;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .search-container {
-                padding: 1.5rem;
-            }
-
-            .category-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .question-count {
-                width: 100%;
-            }
-
-            .faq-question {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .faq-toggle {
-                float: right;
-                margin-top: -1.5rem;
-            }
-        }
-    </style>
+    
 </head>
 <body>
     <nav>
@@ -467,57 +83,32 @@
                     <div class="question-count">18 FAQs</div>
                 </div>
                 <div class="category-content">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How long does the NLV renewal process take?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>The standard processing time is 4-8 weeks from submission. However, this can vary depending on your consulate and individual circumstances. Some consulates may take up to 12 weeks in rare cases. We recommend starting your renewal 3-4 months before your visa expires to ensure ample time.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>When should I start my renewal process?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Begin your renewal 3-4 months before your NLV expires. This timeline accounts for:</p>
+                    <details>
+  <summary></summary>
+  <p>The standard processing time is 4-8 weeks from submission. However, this can vary depending on your consulate and individual circumstances. Some consulates may take up to 12 weeks in rare cases. We recommend starting your renewal 3-4 months before your visa expires to ensure ample time.</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Begin your renewal 3-4 months before your NLV expires. This timeline accounts for:</p>
                             <ul>
                                 <li>Gathering and preparing documents (2-4 weeks)</li>
                                 <li>Booking medical examination if required (2-4 weeks)</li>
                                 <li>Stage 1 payment and consulate liaison (1-2 weeks)</li>
                                 <li>Processing time (4-8 weeks)</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Can I submit my renewal more than 1 month early?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>No, consulates typically do not accept renewal applications submitted more than 1 month before your visa expires. Submitting too early may result in rejection. Time your submission carefully to avoid this.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What happens if I wait until the last minute?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>While Spanish law provides de facto grace periods during active renewal, waiting until the last minute creates risk. If processing takes longer than expected, you may face legal complications. The safe approach is submitting 1-2 months before expiration.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How long is the medical certificate valid?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>The medical certificate (if required) is valid for 3 months from the date of examination. Schedule your medical exam during the last 3 months before your renewal deadline to ensure validity at submission.</p>
-                        </div>
-                    </div>
+</details>
+                    <details>
+  <summary></summary>
+  <p>No, consulates typically do not accept renewal applications submitted more than 1 month before your visa expires. Submitting too early may result in rejection. Time your submission carefully to avoid this.</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>While Spanish law provides de facto grace periods during active renewal, waiting until the last minute creates risk. If processing takes longer than expected, you may face legal complications. The safe approach is submitting 1-2 months before expiration.</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>The medical certificate (if required) is valid for 3 months from the date of examination. Schedule your medical exam during the last 3 months before your renewal deadline to ensure validity at submission.</p>
+</details>
                 </div>
             </section>
 
@@ -529,13 +120,9 @@
                     <div class="question-count">22 FAQs</div>
                 </div>
                 <div class="category-content">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What documents do I need for my renewal?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Core documents required for all renewals:</p>
+                    <details>
+  <summary></summary>
+  <p>Core documents required for all renewals:</p>
                             <ul>
                                 <li>Valid passport</li>
                                 <li>Current NIE certificate</li>
@@ -545,30 +132,20 @@
                                 <li>Employment documentation or pension statements</li>
                                 <li>Medical certificate (if over 40)</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Do I need a medical examination?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Medical examination requirements vary by consulate and age:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Medical examination requirements vary by consulate and age:</p>
                             <ul>
                                 <li>Generally required if you're over 40 years old</li>
                                 <li>Some consulates require it for all renewals</li>
                                 <li>Check with your specific consulate for their requirements</li>
                                 <li>Budget €50-150 for medical costs</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What income documentation do I need?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>The type depends on your income source:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>The type depends on your income source:</p>
                             <ul>
                                 <li><strong>Employment:</strong> Employment contract, recent payslips, employer letter</li>
                                 <li><strong>Self-employed:</strong> Tax returns, business registration, bank statements</li>
@@ -576,24 +153,14 @@
                                 <li><strong>Investment income:</strong> Bank statements, investment account statements</li>
                                 <li><strong>Family support:</strong> Statutory declaration or notarized support letter</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Can I submit photocopies instead of originals?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Most consulates require certified copies of documents like birth certificates, marriage certificates, and employment contracts. Originals should be brought to your appointment for verification. Bank statements and payslips typically don't need certification.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Do all documents need to be translated?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Non-Spanish documents typically require official translation by a certified translator (oficial traductor). This applies to:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Most consulates require certified copies of documents like birth certificates, marriage certificates, and employment contracts. Originals should be brought to your appointment for verification. Bank statements and payslips typically don't need certification.</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Non-Spanish documents typically require official translation by a certified translator (oficial traductor). This applies to:</p>
                             <ul>
                                 <li>Birth certificates</li>
                                 <li>Marriage certificates</li>
@@ -601,8 +168,7 @@
                                 <li>Foreign employment documents</li>
                             </ul>
                             <p>Budget €50-100 per document for translation costs.</p>
-                        </div>
-                    </div>
+</details>
                 </div>
             </section>
 
@@ -614,13 +180,9 @@
                     <div class="question-count">16 FAQs</div>
                 </div>
                 <div class="category-content">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How much does the renewal cost?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Total renewal cost breakdown:</p>
+                    <details>
+  <summary></summary>
+  <p>Total renewal cost breakdown:</p>
                             <ul>
                                 <li><strong>Our Service Fee:</strong> €699 (€300 Stage 1 + €399 Stage 2)</li>
                                 <li><strong>Government Fees:</strong> €50-150 per family member</li>
@@ -628,26 +190,16 @@
                                 <li><strong>Translation Services:</strong> €50-100 per document</li>
                             </ul>
                             <p>Total can range from €800-1,500+ depending on your circumstances.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What's the difference between Stage 1 and Stage 2?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p><strong>Stage 1 (€300):</strong> Initial document review, consulate liaison, application preparation</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p><strong>Stage 1 (€300):</strong> Initial document review, consulate liaison, application preparation</p>
                             <p><strong>Stage 2 (€399):</strong> Paid after approval notification, covers final processing and visa delivery</p>
                             <p>This two-stage payment structure aligns with the actual approval process.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How do I calculate my exact costs?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Use our interactive cost calculator tool:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Use our interactive cost calculator tool:</p>
                             <ul>
                                 <li>Select your family size (1-5 members)</li>
                                 <li>Enter government fee estimate for your region</li>
@@ -655,8 +207,7 @@
                                 <li>Enter your annual health insurance cost</li>
                                 <li>The tool will show your complete cost breakdown</li>
                             </ul>
-                        </div>
-                    </div>
+</details>
                 </div>
             </section>
 
@@ -668,13 +219,9 @@
                     <div class="question-count">20 FAQs</div>
                 </div>
                 <div class="category-content">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What happens after I submit my application?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>After submission:</p>
+                    <details>
+  <summary></summary>
+  <p>After submission:</p>
                             <ul>
                                 <li>Your application enters the consulate queue</li>
                                 <li>Initial documentation review begins (1-2 weeks)</li>
@@ -683,30 +230,20 @@
                                 <li>Approval notification typically comes at 4-8 weeks</li>
                                 <li>You'll receive your new visa within 1-2 weeks of approval</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How can I check my application status?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Status checking options:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Status checking options:</p>
                             <ul>
                                 <li>Contact your consulate directly with your reference number</li>
                                 <li>Some consulates have online tracking systems</li>
                                 <li>We provide regular status updates to our clients</li>
                                 <li>Schedule a call to discuss your specific timeline</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What if the consulate requests additional documents?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>This is common and doesn't indicate problems:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>This is common and doesn't indicate problems:</p>
                             <ul>
                                 <li>Respond promptly to requests (within 1-2 weeks)</li>
                                 <li>Provide exactly what's requested, nothing less</li>
@@ -714,23 +251,17 @@
                                 <li>We coordinate with the consulate on your behalf</li>
                                 <li>Processing clock typically pauses during requests</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Can I travel during the renewal process?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, you can travel within the EU/Schengen:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Yes, you can travel within the EU/Schengen:</p>
                             <ul>
                                 <li>Your visa remains valid until renewal is submitted</li>
                                 <li>After submission, Spain grants de facto residency</li>
                                 <li>You can move freely within Schengen zone</li>
                                 <li>Avoid traveling outside Schengen without confirmation from consulate</li>
                             </ul>
-                        </div>
-                    </div>
+</details>
                 </div>
             </section>
 
@@ -742,58 +273,39 @@
                     <div class="question-count">24 FAQs</div>
                 </div>
                 <div class="category-content">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What if my NLV expires during processing?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>You're legally protected under Spanish law:</p>
+                    <details>
+  <summary></summary>
+  <p>You're legally protected under Spanish law:</p>
                             <ul>
                                 <li>Once you submit your renewal application, Spain grants de facto residency</li>
                                 <li>You can continue living and working legally</li>
                                 <li>Your legal status remains valid until a decision is made</li>
                                 <li>This is why proper timing (1-2 months before expiration) is critical</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What if my renewal is denied?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Denials are rare but do happen:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Denials are rare but do happen:</p>
                             <ul>
                                 <li>You'll receive written explanation from the consulate</li>
                                 <li>Common reasons: income not meeting minimum, documentation issues, legal problems</li>
                                 <li>You typically have 30 days to appeal the decision</li>
                                 <li>Professional assistance during appeal is highly recommended</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Can I renew if my circumstances have changed?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, you can renew with different circumstances:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Yes, you can renew with different circumstances:</p>
                             <ul>
                                 <li>Changed employment or become self-employed</li>
                                 <li>Changed marital status or family situation</li>
                                 <li>Changed health insurance provider</li>
                                 <li>Simply provide updated documentation showing your current situation</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How long can I renew my NLV?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>You can renew indefinitely as long as:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>You can renew indefinitely as long as:</p>
                             <ul>
                                 <li>You continue meeting the income requirement</li>
                                 <li>You maintain health insurance</li>
@@ -801,8 +313,7 @@
                                 <li>There are no legal grounds for refusal</li>
                                 <li>Each renewal is valid for 1 year</li>
                             </ul>
-                        </div>
-                    </div>
+</details>
                 </div>
             </section>
 
@@ -814,65 +325,45 @@
                     <div class="question-count">44 FAQs</div>
                 </div>
                 <div class="category-content">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What's the difference between first and second renewal?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Key differences:</p>
+                    <details>
+  <summary></summary>
+  <p>Key differences:</p>
                             <ul>
                                 <li><strong>Processing Time:</strong> Second renewal is typically 4-8 weeks (vs 6-12 weeks first time)</li>
                                 <li><strong>Requirements:</strong> Essentially identical to first renewal</li>
                                 <li><strong>Documents:</strong> No additional requirements</li>
                                 <li><strong>Cost:</strong> Same pricing applies</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Can my family members renew together?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, family renewals are possible:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Yes, family renewals are possible:</p>
                             <ul>
                                 <li>Spouses and dependent children can renew together</li>
                                 <li>One income can support the whole family</li>
                                 <li>Must meet minimum income requirements for family size</li>
                                 <li>Submitting together can simplify the process</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Do I need a lawyer for my renewal?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Not always required, but helpful if:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Not always required, but helpful if:</p>
                             <ul>
                                 <li>Your circumstances are complex or unusual</li>
                                 <li>You're facing potential renewal issues</li>
                                 <li>You've had previous legal problems in Spain</li>
                                 <li>You want professional guidance (recommended)</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What consulate handles my renewal?</span>
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Generally, your original visa-issuing consulate handles renewals. However:</p>
+</details>
+                    <details>
+  <summary></summary>
+  <p>Generally, your original visa-issuing consulate handles renewals. However:</p>
                             <ul>
                                 <li>If you moved to a different region, you may renew through your local consulate</li>
                                 <li>Contact your nearest Spanish consulate for confirmation</li>
                                 <li>The consulate responsible depends on your current residence</li>
                             </ul>
-                        </div>
-                    </div>
+</details>
                 </div>
             </section>
         </div>

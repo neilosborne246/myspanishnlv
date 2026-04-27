@@ -769,13 +769,6 @@ footer.site-footer {
   <!-- HERO -->
   <div class="page-hero">
     <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="sep">›</span>
-        <a href="/canada/">Canada</a>
-        <span class="sep">›</span>
-        <span>Vancouver Consulate</span>
-      </nav>
       <p class="page-label">Spanish Consulate General — Vancouver</p>
       <h1>Spain NLV via the <em>Spanish Consulate Vancouver</em> — Your Western Canada Guide</h1>
       <p class="page-hero-sub">Applying for Spain's Non-Lucrative Visa from British Columbia, Alberta, or another western Canadian province? This guide covers everything you need: which provinces apply through Vancouver, how to book your appointment, the RCMP check process, and the documents you need to bring. Many of our Vancouver clients are heading to Barcelona, Málaga, or Valencia — and our specialists make the process as smooth as possible.</p>
@@ -793,7 +786,7 @@ footer.site-footer {
 
   <!-- SECTION 1: WHICH PROVINCES APPLY HERE (DARK) -->
   <section class="dark-section" id="jurisdiction">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <p class="section-label">Consulate Jurisdiction</p>
         <h2 class="section-title">Which Provinces Apply Through the Vancouver Consulate?</h2>
@@ -865,7 +858,7 @@ footer.site-footer {
 
   <!-- SECTION 2: HOW TO BOOK YOUR APPOINTMENT (LIGHT) -->
   <section class="light-section" id="appointment">
-    <div class="container">
+    <div class="section-inner">
         <div style="background:var(--yellow);border-radius:12px;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem;">
           <div>
             <p style="margin:0;font-weight:700;color:var(--navy);font-size:1rem;">Book your consulate appointment online</p>
@@ -904,7 +897,7 @@ footer.site-footer {
 
   <!-- SECTION 3: RCMP CHECK GUIDE (DARK) -->
   <section class="dark-section" id="rcmp-check">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <p class="section-label">Criminal Record Check</p>
         <h2 class="section-title">RCMP Check Guide for Western Canada Applicants</h2>
@@ -937,7 +930,7 @@ footer.site-footer {
 
   <!-- SECTION 4: FULL DOCUMENTS CHECKLIST (LIGHT) -->
   <section class="light-section" id="documents">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <p class="section-label">Documents Checklist</p>
         <h2 class="section-title">Full NLV Documents Checklist — Vancouver Consulate</h2>
@@ -1003,7 +996,7 @@ footer.site-footer {
 
   <!-- SECTION 5: FAQ (DARK) -->
   <section class="dark-section" id="faq">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <p class="section-label">Common Questions</p>
         <h2 class="section-title">Vancouver Consulate NLV — Frequently Asked Questions</h2>
@@ -1051,7 +1044,7 @@ footer.site-footer {
 
   <!-- SECTION 6: RELATED LINKS (LIGHT) -->
   <section class="light-section" id="related">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <p class="section-label">Related Guides</p>
         <h2 class="section-title">More resources for Canadian applicants</h2>
@@ -1099,33 +1092,34 @@ footer.site-footer {
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-col footer-brand">
-      <a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" height="80" /></a>
-      <p>Spain Non-Lucrative Visa specialists supporting western Canadian applicants through the Spanish Consulate in Vancouver.</p>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" /></a></div>
+      <p class="footer-tagline">Spain Non-Lucrative Visa specialists supporting western Canadian applicants through the Spanish Consulate in Vancouver.</p>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-list">
         <li><a href="/services/non-lucrative-visa-application.html">NLV Application</a></li>
-        <li><a href="/renewal.html">NLV Renewal</a></li>
+        <li><a href="/services/non-lucrative-visa-renewal.html">NLV Renewal</a></li>
         <li><a href="/services/family-application.html">Family Application</a></li>
         <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Information</h4>
-      <ul>
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-list">
         <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
         <li><a href="/requirements.html">Requirements</a></li>
         <li><a href="/how-it-works.html">How It Works</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
         <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
+    <div>
+      <p class="footer-heading">Company</p>
+      <ul class="footer-list">
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
@@ -1134,16 +1128,16 @@ footer.site-footer {
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">&copy; 2026 My Spanish NLV. Operated by Retail Consulting UK Ltd (Company No. 06711242). Legal services delivered in partnership with Platinum Legal Spain.</p>
+    <p class="footer-copy">&copy; 2026 My Spanish NLV / Platinum Legal Spain. Information only &mdash; not legal advice.</p>
     <nav class="footer-legal" aria-label="Legal links">
       <a href="/legal/privacy-policy.html">Privacy Policy</a>
       <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
-      <a href="/legal/cookies-policy.html">Cookie Policy</a>
+      <a href="/legal/cookie-policy.html">Cookie Policy</a>
     </nav>
   </div>
 </footer>
 
-<div class="mobile-sticky-bar"><a href="https://dashboard.platinumlegalspain.com/nlv" class="sticky-cta">Start My Application</a></div>
+<div class="mobile-bar"><a href="https://dashboard.platinumlegalspain.com/nlv" class="bar-apply" rel="noopener noreferrer">Start My Application</a><a href="/contact.html" class="bar-contact">Contact Us</a></div>
 
 <script>
   const toggle = document.querySelector('.nav-toggle');

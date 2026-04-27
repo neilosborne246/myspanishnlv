@@ -155,475 +155,7 @@
     }
     </script>
 
-    <style>
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e7e3;
-            --medium-gray: #999;
-            --dark-gray: #333;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-
-        a {
-            color: var(--red);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--navy);
-            text-decoration: underline;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -9999px;
-            z-index: 999;
-        }
-
-        .skip-link:focus {
-            top: 0;
-            left: 0;
-            background: var(--navy);
-            color: var(--white);
-            padding: 8px 16px;
-        }
-
-        header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 16px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            color: var(--white);
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        .breadcrumb {
-            background: var(--light-gray);
-            padding: 16px;
-            font-size: 14px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .breadcrumb a {
-            color: var(--red);
-        }
-
-        .breadcrumb span {
-            color: var(--medium-gray);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 16px;
-        }
-
-        h1 {
-            color: var(--navy);
-            font-size: 32px;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .intro-text {
-            font-size: 18px;
-            color: var(--dark-gray);
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-
-        .warning-box {
-            background-color: #fff3cd;
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .warning-box h3 {
-            color: #d32f2f;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .warning-box p {
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        .warning-box strong {
-            color: #d32f2f;
-        }
-
-        h2 {
-            color: var(--navy);
-            font-size: 28px;
-            margin-top: 48px;
-            margin-bottom: 24px;
-            line-height: 1.3;
-            border-bottom: 3px solid var(--yellow);
-            padding-bottom: 12px;
-        }
-
-        h3 {
-            color: var(--navy);
-            font-size: 20px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        ul, ol {
-            margin-left: 24px;
-            margin-bottom: 24px;
-        }
-
-        li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 32px 0;
-            background-color: var(--white);
-        }
-
-        .comparison-table th {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 16px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 16px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .comparison-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .checklist {
-            background-color: var(--cream);
-            padding: 24px;
-            border-radius: 4px;
-            margin: 32px 0;
-        }
-
-        .checklist h3 {
-            margin-top: 0;
-            color: var(--red);
-        }
-
-        .checklist ul {
-            margin-left: 24px;
-        }
-
-        .checklist li {
-            margin-bottom: 12px;
-        }
-
-        .checklist li:before {
-            content: "✓ ";
-            color: var(--red);
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .faq-section {
-            margin-top: 48px;
-        }
-
-        .faq-item {
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--light-gray);
-            padding-bottom: 24px;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .faq-question:hover {
-            color: var(--red);
-        }
-
-        .faq-answer {
-            color: var(--dark-gray);
-            line-height: 1.8;
-            display: none;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .faq-toggle {
-            color: var(--red);
-            font-weight: bold;
-            min-width: 20px;
-        }
-
-        .cta-section {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 24px;
-            border-radius: 4px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            border-bottom-color: var(--yellow);
-            margin-top: 0;
-        }
-
-        .cta-section p {
-            color: var(--cream);
-            font-size: 18px;
-            margin-bottom: 24px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--red);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--navy);
-            text-decoration: none;
-        }
-
-        .btn-secondary {
-            background-color: var(--yellow);
-            color: var(--navy);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        .btn-white {
-            background-color: var(--white);
-            color: var(--navy);
-        }
-
-        .btn-white:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 16px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        footer p {
-            margin-bottom: 12px;
-            color: var(--cream);
-        }
-
-        footer a {
-            color: var(--yellow);
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--navy);
-            padding: 12px 16px;
-            z-index: 99;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-        }
-
-        .sticky-bar.visible {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .sticky-bar .btn {
-            padding: 12px 24px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-
-            .intro-text {
-                font-size: 16px;
-            }
-
-            .comparison-table {
-                font-size: 14px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 12px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 24px 12px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            header {
-                padding: 12px;
-            }
-
-            .breadcrumb {
-                font-size: 12px;
-                padding: 12px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .comparison-table {
-                font-size: 12px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 8px;
-            }
-
-            .warning-box {
-                padding: 16px;
-            }
-        }
-    </style>
+    
         <!-- Related Guides -->
         <section style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--light-gray);">
             <h2 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">Related Guides</h2>
@@ -970,125 +502,65 @@
         <section class="faq-section">
             <h2>Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Do I need health insurance to renew my NLV?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, health insurance is mandatory for NLV renewal. The Spanish government requires proof of comprehensive healthcare coverage to demonstrate that you can support yourself financially during your stay in Spain. Without continuous insurance coverage, your renewal application will be denied.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Do I need health insurance to renew my NLV?</summary>
+  <p>Yes, health insurance is mandatory for NLV renewal. The Spanish government requires proof of comprehensive healthcare coverage to demonstrate that you can support yourself financially during your stay in Spain. Without continuous insurance coverage, your renewal application will be denied.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What happens if my health insurance lapses before renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>If your health insurance lapses even for one day before your renewal appointment, your renewal will be automatically denied. Spanish authorities use a blacklist system that flags any gaps in coverage. The insurance must be continuous without interruption from your current visa expiration date through your renewal approval date.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What happens if my health insurance lapses before renewal?</summary>
+  <p>If your health insurance lapses even for one day before your renewal appointment, your renewal will be automatically denied. Spanish authorities use a blacklist system that flags any gaps in coverage. The insurance must be continuous without interruption from your current visa expiration date through your renewal approval date.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I switch health insurance providers during renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>You can switch providers, but only if you plan the transition carefully. The new insurance must become active on the same day your old policy expires—not a single day gap is permitted. We recommend starting the process at least 3-4 weeks before your renewal appointment to ensure seamless coverage transition with proper documentation.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I switch health insurance providers during renewal?</summary>
+  <p>You can switch providers, but only if you plan the transition carefully. The new insurance must become active on the same day your old policy expires—not a single day gap is permitted. We recommend starting the process at least 3-4 weeks before your renewal appointment to ensure seamless coverage transition with proper documentation.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What's the difference between private and public healthcare in Spain?
-                </div>
-                <div class="faq-answer">
-                    <p>Public healthcare (Seguridad Social) is Spain's national health system funded through taxes. Private healthcare offers more choice of doctors and shorter wait times but costs more. For NLV renewal, either public or private insurance is acceptable, provided it's continuous and comprehensive. Many NLV holders prefer private insurance for faster access to specialists and English-speaking doctors.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What's the difference between private and public healthcare in Spain?</summary>
+  <p>Public healthcare (Seguridad Social) is Spain's national health system funded through taxes. Private healthcare offers more choice of doctors and shorter wait times but costs more. For NLV renewal, either public or private insurance is acceptable, provided it's continuous and comprehensive. Many NLV holders prefer private insurance for faster access to specialists and English-speaking doctors.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    How much does private health insurance cost in Spain?
-                </div>
-                <div class="faq-answer">
-                    <p>Private health insurance in Spain typically costs between €100-400 per month depending on age, coverage level, and provider. Younger applicants (under 50) usually pay €100-150/month, while those over 60 may pay €250-400/month. Comprehensive policies that cover doctor visits, hospitalization, dental, and optometry are readily available at most price points.</p>
-                </div>
-            </div>
+            <details>
+  <summary>How much does private health insurance cost in Spain?</summary>
+  <p>Private health insurance in Spain typically costs between €100-400 per month depending on age, coverage level, and provider. Younger applicants (under 50) usually pay €100-150/month, while those over 60 may pay €250-400/month. Comprehensive policies that cover doctor visits, hospitalization, dental, and optometry are readily available at most price points.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I use European health insurance cards or travel insurance?
-                </div>
-                <div class="faq-answer">
-                    <p>European Health Insurance Cards (EHIC) are not sufficient for NLV renewal because they're only for temporary stays. Travel insurance is also inadequate as it's designed for short-term emergency coverage, not residency requirements. You must have a continuous healthcare policy that demonstrates your commitment to staying in Spain long-term.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I use European health insurance cards or travel insurance?</summary>
+  <p>European Health Insurance Cards (EHIC) are not sufficient for NLV renewal because they're only for temporary stays. Travel insurance is also inadequate as it's designed for short-term emergency coverage, not residency requirements. You must have a continuous healthcare policy that demonstrates your commitment to staying in Spain long-term.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What documents do I need to provide for health insurance verification?
-                </div>
-                <div class="faq-answer">
-                    <p>You'll need the original insurance policy document showing your name, policy number, coverage dates, and the insurer's official stamp. A printout of your insurance status from the provider's website should also be prepared. Some consulates request proof of payment (invoice or bank transfer confirmation) showing premiums are current. We recommend having all three documents ready for your appointment.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What documents do I need to provide for health insurance verification?</summary>
+  <p>You'll need the original insurance policy document showing your name, policy number, coverage dates, and the insurer's official stamp. A printout of your insurance status from the provider's website should also be prepared. Some consulates request proof of payment (invoice or bank transfer confirmation) showing premiums are current. We recommend having all three documents ready for your appointment.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    When should I arrange health insurance for renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>Start arranging insurance at least 2 months before your NLV renewal appointment. This provides time for the policy to take effect, allows you to gather required documents, and creates a buffer if there are any processing delays. If you're changing providers, aim for 3-4 weeks to ensure seamless transition without any coverage gaps.</p>
-                </div>
-            </div>
+            <details>
+  <summary>When should I arrange health insurance for renewal?</summary>
+  <p>Start arranging insurance at least 2 months before your NLV renewal appointment. This provides time for the policy to take effect, allows you to gather required documents, and creates a buffer if there are any processing delays. If you're changing providers, aim for 3-4 weeks to ensure seamless transition without any coverage gaps.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if I don't qualify for public healthcare?
-                </div>
-                <div class="faq-answer">
-                    <p>Non-residents in Spain must use private healthcare as public healthcare generally requires Spanish residency or Spanish employment. Fortunately, private health insurance is affordable and widely available. Many NLV holders actually prefer private insurance because it offers more flexibility, faster specialist access, and English-speaking medical professionals in major cities.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I don't qualify for public healthcare?</summary>
+  <p>Non-residents in Spain must use private healthcare as public healthcare generally requires Spanish residency or Spanish employment. Fortunately, private health insurance is affordable and widely available. Many NLV holders actually prefer private insurance because it offers more flexibility, faster specialist access, and English-speaking medical professionals in major cities.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I get health insurance if I have pre-existing conditions?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, most Spanish health insurance providers do not refuse coverage based on pre-existing conditions. However, some policies may exclude specific high-cost treatments initially or charge higher premiums. When applying, be honest about your health history. Shop around with multiple providers—some specialize in comprehensive coverage for those with health concerns and offer competitive rates.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I get health insurance if I have pre-existing conditions?</summary>
+  <p>Yes, most Spanish health insurance providers do not refuse coverage based on pre-existing conditions. However, some policies may exclude specific high-cost treatments initially or charge higher premiums. When applying, be honest about your health history. Shop around with multiple providers—some specialize in comprehensive coverage for those with health concerns and offer competitive rates.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What coverage types are acceptable for NLV renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>The Spanish government requires 'comprehensive' health insurance that covers at minimum: general practitioner visits, hospitalization, emergency care, and major medical services. Policies with very high deductibles, limited coverage, or significant exclusions may be questioned. Premium plans covering dental, optometry, and specialist visits are ideal as they demonstrate serious financial commitment to healthcare in Spain.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What coverage types are acceptable for NLV renewal?</summary>
+  <p>The Spanish government requires 'comprehensive' health insurance that covers at minimum: general practitioner visits, hospitalization, emergency care, and major medical services. Policies with very high deductibles, limited coverage, or significant exclusions may be questioned. Premium plans covering dental, optometry, and specialist visits are ideal as they demonstrate serious financial commitment to healthcare in Spain.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if I'm changing insurance and gap occurs—can I still renew?
-                </div>
-                <div class="faq-answer">
-                    <p>If a gap occurs, your renewal will be denied. This is non-negotiable. If you've already missed a renewal opportunity due to a coverage gap, you'll need to reapply from scratch when new continuous coverage begins (usually 6-12 months after restarting). Prevention is critical—never let coverage lapse, even for one day. Coordinate with both insurers to ensure exact overlap of coverage dates.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I'm changing insurance and gap occurs—can I still renew?</summary>
+  <p>If a gap occurs, your renewal will be denied. This is non-negotiable. If you've already missed a renewal opportunity due to a coverage gap, you'll need to reapply from scratch when new continuous coverage begins (usually 6-12 months after restarting). Prevention is critical—never let coverage lapse, even for one day. Coordinate with both insurers to ensure exact overlap of coverage dates.</p>
+</details>
         </section>
 
         <div class="cta-section">
@@ -1136,16 +608,6 @@
         });
 
         // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const toggle = this.querySelector('.faq-toggle');
-
-                answer.classList.toggle('active');
-                toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-            });
-        });
     </script>
 </body>
 </html>

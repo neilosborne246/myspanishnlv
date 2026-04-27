@@ -147,437 +147,7 @@
     }
     </script>
 
-    <style>
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e7e3;
-            --medium-gray: #999;
-            --dark-gray: #333;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-
-        a {
-            color: var(--red);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--navy);
-            text-decoration: underline;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -9999px;
-            z-index: 999;
-        }
-
-        .skip-link:focus {
-            top: 0;
-            left: 0;
-            background: var(--navy);
-            color: var(--white);
-            padding: 8px 16px;
-        }
-
-        header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 16px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            color: var(--white);
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        .breadcrumb {
-            background: var(--light-gray);
-            padding: 16px;
-            font-size: 14px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .breadcrumb a {
-            color: var(--red);
-        }
-
-        .breadcrumb span {
-            color: var(--medium-gray);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 16px;
-        }
-
-        h1 {
-            color: var(--navy);
-            font-size: 32px;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .intro-text {
-            font-size: 18px;
-            color: var(--dark-gray);
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-
-        .info-box {
-            background-color: #e3f2fd;
-            border-left: 4px solid #1976d2;
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .info-box h3 {
-            color: #1976d2;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .info-box p {
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        h2 {
-            color: var(--navy);
-            font-size: 28px;
-            margin-top: 48px;
-            margin-bottom: 24px;
-            line-height: 1.3;
-            border-bottom: 3px solid var(--yellow);
-            padding-bottom: 12px;
-        }
-
-        h3 {
-            color: var(--navy);
-            font-size: 20px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        ul, ol {
-            margin-left: 24px;
-            margin-bottom: 24px;
-        }
-
-        li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .checklist {
-            background-color: var(--cream);
-            padding: 24px;
-            border-radius: 4px;
-            margin: 32px 0;
-        }
-
-        .checklist h3 {
-            margin-top: 0;
-            color: var(--red);
-        }
-
-        .checklist ul {
-            margin-left: 24px;
-        }
-
-        .checklist li {
-            margin-bottom: 12px;
-        }
-
-        .checklist li:before {
-            content: "✓ ";
-            color: var(--red);
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .test-card {
-            background-color: var(--light-gray);
-            padding: 20px;
-            margin: 16px 0;
-            border-radius: 4px;
-            border-left: 4px solid var(--red);
-        }
-
-        .test-card h4 {
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .test-card p {
-            margin-bottom: 0;
-            font-size: 14px;
-        }
-
-        .faq-section {
-            margin-top: 48px;
-        }
-
-        .faq-item {
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--light-gray);
-            padding-bottom: 24px;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .faq-question:hover {
-            color: var(--red);
-        }
-
-        .faq-answer {
-            color: var(--dark-gray);
-            line-height: 1.8;
-            display: none;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .faq-toggle {
-            color: var(--red);
-            font-weight: bold;
-            min-width: 20px;
-        }
-
-        .cta-section {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 24px;
-            border-radius: 4px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            border-bottom-color: var(--yellow);
-            margin-top: 0;
-        }
-
-        .cta-section p {
-            color: var(--cream);
-            font-size: 18px;
-            margin-bottom: 24px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--red);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--navy);
-            text-decoration: none;
-        }
-
-        .btn-secondary {
-            background-color: var(--yellow);
-            color: var(--navy);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 16px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        footer p {
-            margin-bottom: 12px;
-            color: var(--cream);
-        }
-
-        footer a {
-            color: var(--yellow);
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--navy);
-            padding: 12px 16px;
-            z-index: 99;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-        }
-
-        .sticky-bar.visible {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .sticky-bar .btn {
-            padding: 12px 24px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-
-            .intro-text {
-                font-size: 16px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 24px 12px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            header {
-                padding: 12px;
-            }
-
-            .breadcrumb {
-                font-size: 12px;
-                padding: 12px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .test-card {
-                padding: 16px;
-            }
-        }
-    </style>
+    
         <!-- Related Guides -->
         <section style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--light-gray);">
             <h2 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">Related Guides</h2>
@@ -897,115 +467,60 @@
         <section class="faq-section">
             <h2>Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Is a medical certificate required for NLV renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>A medical certificate is generally NOT mandatory for standard NLV renewal for younger applicants. However, some consulates request one, and applicants over 60 are increasingly required to provide health documentation. The specific requirement varies by consulate and your age. Check with your specific consulate before renewal to confirm whether you need one.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Is a medical certificate required for NLV renewal?</summary>
+  <p>A medical certificate is generally NOT mandatory for standard NLV renewal for younger applicants. However, some consulates request one, and applicants over 60 are increasingly required to provide health documentation. The specific requirement varies by consulate and your age. Check with your specific consulate before renewal to confirm whether you need one.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Who needs a medical certificate for NLV renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>Medical certificates are typically required for: applicants over 60 years old, applicants with certain pre-existing conditions that might affect their ability to live in Spain, and occasionally for all applicants (depends on consulate policy). Some consulates require medical certificates for everyone; others only when health concerns are evident. Contact your consulate to confirm.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Who needs a medical certificate for NLV renewal?</summary>
+  <p>Medical certificates are typically required for: applicants over 60 years old, applicants with certain pre-existing conditions that might affect their ability to live in Spain, and occasionally for all applicants (depends on consulate policy). Some consulates require medical certificates for everyone; others only when health concerns are evident. Contact your consulate to confirm.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What does the medical certificate need to say?
-                </div>
-                <div class="faq-answer">
-                    <p>The certificate should confirm that you are in adequate health to reside in Spain and that you do not have infectious diseases or medical conditions that pose a public health risk. It typically includes: blood tests (HIV, syphilis), chest X-ray (for TB), general health assessment, and confirmation that you can manage daily living activities.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What does the medical certificate need to say?</summary>
+  <p>The certificate should confirm that you are in adequate health to reside in Spain and that you do not have infectious diseases or medical conditions that pose a public health risk. It typically includes: blood tests (HIV, syphilis), chest X-ray (for TB), general health assessment, and confirmation that you can manage daily living activities.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Where do I get a medical certificate for NLV renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>You can obtain a medical certificate from: (1) your personal doctor in Spain through your health insurance, (2) a Spanish private clinic or medical center, (3) a physician in your home country who can issue an international health certificate. The certificate must be in English or Spanish and issued by a licensed physician.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Where do I get a medical certificate for NLV renewal?</summary>
+  <p>You can obtain a medical certificate from: (1) your personal doctor in Spain through your health insurance, (2) a Spanish private clinic or medical center, (3) a physician in your home country who can issue an international health certificate. The certificate must be in English or Spanish and issued by a licensed physician.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    How much does a medical certificate cost?
-                </div>
-                <div class="faq-answer">
-                    <p>Costs vary: €50-150 if obtained through your Spanish health insurance (often minimal cost), €150-300 if obtained at a private clinic in Spain, and €100-200 if obtained in your home country. The cost typically includes the exam and certificate issuance. Some clinics offer package deals for NLV renewals at discounted rates.</p>
-                </div>
-            </div>
+            <details>
+  <summary>How much does a medical certificate cost?</summary>
+  <p>Costs vary: €50-150 if obtained through your Spanish health insurance (often minimal cost), €150-300 if obtained at a private clinic in Spain, and €100-200 if obtained in your home country. The cost typically includes the exam and certificate issuance. Some clinics offer package deals for NLV renewals at discounted rates.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if I have pre-existing health conditions?
-                </div>
-                <div class="faq-answer">
-                    <p>Pre-existing conditions are usually not grounds for renewal denial unless they're infectious (TB, HIV) or severely limit your ability to live independently in Spain. Be honest with your physician about your health history. Most consulates only reject renewals if you cannot legally reside in Spain due to health—not simply because you have a chronic condition managed with medication.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I have pre-existing health conditions?</summary>
+  <p>Pre-existing conditions are usually not grounds for renewal denial unless they're infectious (TB, HIV) or severely limit your ability to live independently in Spain. Be honest with your physician about your health history. Most consulates only reject renewals if you cannot legally reside in Spain due to health—not simply because you have a chronic condition managed with medication.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    When should I get the medical certificate?
-                </div>
-                <div class="faq-answer">
-                    <p>Obtain your medical certificate 2-4 weeks before your renewal appointment. This gives you time to address any issues if the initial exam finds concerns. Getting it too early (more than 3 months before) risks the consulate considering it outdated. Timing it 2-4 weeks before is ideal.</p>
-                </div>
-            </div>
+            <details>
+  <summary>When should I get the medical certificate?</summary>
+  <p>Obtain your medical certificate 2-4 weeks before your renewal appointment. This gives you time to address any issues if the initial exam finds concerns. Getting it too early (more than 3 months before) risks the consulate considering it outdated. Timing it 2-4 weeks before is ideal.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What tests are typically included in the medical examination?
-                </div>
-                <div class="faq-answer">
-                    <p>Standard tests include: blood work (full blood count, liver/kidney function, HIV, syphilis), chest X-ray (TB screening), blood pressure and basic vital signs check, vision/hearing screening (for older applicants), and general physical examination. Some consulates provide a list of required tests; if not, ask your physician what tests Spain typically requires.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What tests are typically included in the medical examination?</summary>
+  <p>Standard tests include: blood work (full blood count, liver/kidney function, HIV, syphilis), chest X-ray (TB screening), blood pressure and basic vital signs check, vision/hearing screening (for older applicants), and general physical examination. Some consulates provide a list of required tests; if not, ask your physician what tests Spain typically requires.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I use a medical certificate from my home country?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, a medical certificate from your home country can work if: (1) it's issued by a licensed physician, (2) it's in English or Spanish (translations must be notarized), (3) it includes the required tests (blood work, X-ray), and (4) it's dated no more than 3 months before your renewal appointment. Many applicants use home country certificates and have success.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I use a medical certificate from my home country?</summary>
+  <p>Yes, a medical certificate from your home country can work if: (1) it's issued by a licensed physician, (2) it's in English or Spanish (translations must be notarized), (3) it includes the required tests (blood work, X-ray), and (4) it's dated no more than 3 months before your renewal appointment. Many applicants use home country certificates and have success.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if my medical exam finds health concerns?
-                </div>
-                <div class="faq-answer">
-                    <p>If the exam identifies manageable conditions (high blood pressure, diabetes, etc.), these are typically fine—you just need them noted in the certificate. If serious concerns arise (untreated infectious disease, severe incapacity), address them before renewal. You can usually get a second opinion or get the condition treated, then obtain updated certification. Delaying renewal is better than submitting a failed medical.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if my medical exam finds health concerns?</summary>
+  <p>If the exam identifies manageable conditions (high blood pressure, diabetes, etc.), these are typically fine—you just need them noted in the certificate. If serious concerns arise (untreated infectious disease, severe incapacity), address them before renewal. You can usually get a second opinion or get the condition treated, then obtain updated certification. Delaying renewal is better than submitting a failed medical.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Is the medical certificate mandatory or optional?
-                </div>
-                <div class="faq-answer">
-                    <p>It depends on your consulate and age. Most consulates in 2024-2025 request medical certificates for applicants over 55-60. Younger applicants may not need one unless flagged for other reasons. Contact your specific consulate to clarify—don't assume it's required or not required based on other consulates.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Is the medical certificate mandatory or optional?</summary>
+  <p>It depends on your consulate and age. Most consulates in 2024-2025 request medical certificates for applicants over 55-60. Younger applicants may not need one unless flagged for other reasons. Contact your specific consulate to clarify—don't assume it's required or not required based on other consulates.</p>
+</details>
         </section>
 
         <div class="cta-section">
@@ -1053,16 +568,6 @@
         });
 
         // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const toggle = this.querySelector('.faq-toggle');
-
-                answer.classList.toggle('active');
-                toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-            });
-        });
     </script>
 </body>
 </html>

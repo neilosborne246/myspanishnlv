@@ -769,13 +769,6 @@ footer.site-footer {
   <!-- HERO -->
   <div class="page-hero">
     <div class="page-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span>›</span>
-        <a href="/canada/">Canada</a>
-        <span>›</span>
-        <span>Toronto Consulate</span>
-      </nav>
       <p class="hero-tag">Spanish Consulate General — Toronto</p>
       <h1>Spain NLV via the <em class="hero-highlight">Spanish Consulate Toronto</em> — Your Complete Guide</h1>
       <p class="hero-sub">Applying for Spain's Non-Lucrative Visa through the Spanish Consulate General in Toronto? This guide covers which provinces apply here, how to book your appointment, the RCMP fingerprint check, what to bring, and how our specialists support Ontario and eastern Canada applicants every step of the way.</p>
@@ -793,7 +786,7 @@ footer.site-footer {
 
   <!-- SECTION 1: CONSULATE INFO (light) -->
   <section class="light-section" id="consulate-info">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <h2>Spanish Consulate General — Toronto</h2>
         <p>Key contact details and jurisdiction information for Ontario and eastern Canada NLV applicants.</p>
@@ -854,7 +847,7 @@ footer.site-footer {
 
   <!-- SECTION 2: WHY TORONTO (dark) -->
   <section class="dark-section" id="toronto-overview">
-    <div class="container">
+    <div class="section-inner">
         <div style="background:var(--yellow);border-radius:12px;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem;">
           <div>
             <p style="margin:0;font-weight:700;color:var(--navy);font-size:1rem;">Book your consulate appointment online</p>
@@ -888,7 +881,7 @@ footer.site-footer {
 
   <!-- SECTION 3: HOW TO BOOK (light) -->
   <section class="light-section" id="booking">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <h2>How to Book a Toronto Consulate Appointment</h2>
         <p>Step-by-step guide to securing your appointment at the Spanish Consulate General in Toronto.</p>
@@ -949,7 +942,7 @@ footer.site-footer {
 
   <!-- SECTION 4: RCMP CHECK (dark) -->
   <section class="dark-section" id="rcmp-check">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <h2>The RCMP Check — The Critical Document for Toronto Applicants</h2>
         <p>The fingerprint-based RCMP criminal record check is the most time-sensitive document in any Canadian NLV application. For Toronto applicants, where appointment waits are already long, getting this right from the start is essential.</p>
@@ -977,7 +970,7 @@ footer.site-footer {
 
   <!-- SECTION 5: DOCUMENTS CHECKLIST (light) -->
   <section class="light-section" id="documents">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <h2>Full Documents Checklist for Toronto Applicants</h2>
         <p>What to bring to your Spanish Consulate Toronto NLV appointment — originals and notarised copies of all documents listed below.</p>
@@ -1022,7 +1015,7 @@ footer.site-footer {
 
   <!-- SECTION 6: FAQ (dark) -->
   <section class="dark-section" id="faq">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <h2>Toronto Consulate — Frequently Asked Questions</h2>
       </div>
@@ -1069,7 +1062,7 @@ footer.site-footer {
 
   <!-- RELATED GUIDES (dark) -->
   <section class="dark-section" id="related">
-    <div class="container">
+    <div class="section-inner">
       <div class="section-header">
         <p class="section-label">Related Resources</p>
         <h2>More for Canadian NLV Applicants</h2>
@@ -1116,33 +1109,34 @@ footer.site-footer {
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-col footer-brand">
-      <a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" height="80" /></a>
-      <p>Spain Non-Lucrative Visa specialists supporting Canadian citizens applying through the Spanish Consulate General in Toronto.</p>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" /></a></div>
+      <p class="footer-tagline">Spain Non-Lucrative Visa specialists supporting Canadian citizens applying through the Spanish Consulate General in Toronto.</p>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-list">
         <li><a href="/services/non-lucrative-visa-application.html">NLV Application</a></li>
-        <li><a href="/renewal.html">NLV Renewal</a></li>
+        <li><a href="/services/non-lucrative-visa-renewal.html">NLV Renewal</a></li>
         <li><a href="/services/family-application.html">Family Application</a></li>
         <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Information</h4>
-      <ul>
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-list">
         <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
         <li><a href="/requirements.html">Requirements</a></li>
         <li><a href="/how-it-works.html">How It Works</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
         <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
+    <div>
+      <p class="footer-heading">Company</p>
+      <ul class="footer-list">
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
@@ -1151,11 +1145,16 @@ footer.site-footer {
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 My Spanish NLV. Operated by Retail Consulting UK Ltd (Company No. 06711242). Legal services delivered in partnership with Platinum Legal Spain.</p>
+    <p class="footer-copy">&copy; 2026 My Spanish NLV / Platinum Legal Spain. Information only &mdash; not legal advice.</p>
+    <nav class="footer-legal" aria-label="Legal links">
+      <a href="/legal/privacy-policy.html">Privacy Policy</a>
+      <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="/legal/cookie-policy.html">Cookie Policy</a>
+    </nav>
   </div>
 </footer>
 
-<div class="mobile-sticky-bar"><a href="https://dashboard.platinumlegalspain.com/nlv" class="sticky-cta">Start My Application</a></div>
+<div class="mobile-bar"><a href="https://dashboard.platinumlegalspain.com/nlv" class="bar-apply" rel="noopener noreferrer">Start My Application</a><a href="/contact.html" class="bar-contact">Contact Us</a></div>
 
 <script>
   const toggle = document.querySelector('.nav-toggle');
@@ -1164,14 +1163,6 @@ footer.site-footer {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isOpen));
     menu.classList.toggle('open');
-  });
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      btn.nextElementSibling.hidden = !expanded;
-      btn.querySelector('.faq-icon').textContent = expanded ? '+' : '−';
-    });
   });
 </script>
 

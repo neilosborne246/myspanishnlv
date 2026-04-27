@@ -57,7 +57,7 @@ nav.site-nav {
   border-bottom: 1px solid var(--border-dark);
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 44px; width: auto; }
+.nav-logo img { height: 108px; width: auto; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; margin: 0; padding: 0; }
 .nav-links a {
   color: var(--text-muted-light); text-decoration: none;
@@ -502,6 +502,23 @@ footer.site-footer {
 .text-yellow { color: var(--yellow); }
 .text-red    { color: var(--red); }
 .text-muted  { color: var(--text-muted-light); }
+
+/* Aliases for hero / section heading patterns */
+.hero-tag { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--yellow); margin-bottom: 1rem; font-weight: 500; display: flex; align-items: center; gap: .75rem; }
+.hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--yellow); }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.section-header { margin-bottom: 3rem; }
+.section-header h2 { font-family: var(--ff-display); font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 500; line-height: 1.15; margin-bottom: .75rem; }
+.section-header p  { font-size: 1.05rem; line-height: 1.75; max-width: 640px; font-weight: 300; }
+.dark-section .section-header h2 { color: var(--white); }
+.dark-section .section-header p  { color: var(--text-muted-light); }
+.light-section .section-header h2 { color: var(--navy); }
+.light-section .section-header p  { color: var(--text-muted); }
+
+/* Footer class aliases (backwards-compat for older page HTML) */
+.footer-brand  { display: contents; }
+.footer-links  { display: contents; }
+.footer-col-heading { font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--yellow); margin-bottom: 1rem; font-weight: 600; }
 
 /* ─── ANIMATIONS ──────────────────────────────────────── */
 @keyframes fadeUp {

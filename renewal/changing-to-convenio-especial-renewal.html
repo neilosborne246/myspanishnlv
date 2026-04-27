@@ -155,510 +155,7 @@
     }
     </script>
 
-    <style>
-        :root {
-            --navy: #0c1930;
-            --red: #be0011;
-            --cream: #f8f7f4;
-            --yellow: #facf39;
-            --light-gray: #e8e7e3;
-            --medium-gray: #999;
-            --dark-gray: #333;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--white);
-        }
-
-        a {
-            color: var(--red);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--navy);
-            text-decoration: underline;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -9999px;
-            z-index: 999;
-        }
-
-        .skip-link:focus {
-            top: 0;
-            left: 0;
-            background: var(--navy);
-            color: var(--white);
-            padding: 8px 16px;
-        }
-
-        header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 16px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            color: var(--white);
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        .breadcrumb {
-            background: var(--light-gray);
-            padding: 16px;
-            font-size: 14px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .breadcrumb a {
-            color: var(--red);
-        }
-
-        .breadcrumb span {
-            color: var(--medium-gray);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 16px;
-        }
-
-        h1 {
-            color: var(--navy);
-            font-size: 32px;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .intro-text {
-            font-size: 18px;
-            color: var(--dark-gray);
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-
-        .warning-box {
-            background-color: #fff3cd;
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .warning-box h3 {
-            color: #d32f2f;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .warning-box p {
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        .warning-box strong {
-            color: #d32f2f;
-        }
-
-        .info-box {
-            background-color: #e3f2fd;
-            border-left: 4px solid #1976d2;
-            padding: 20px;
-            margin: 32px 0;
-            border-radius: 4px;
-        }
-
-        .info-box h3 {
-            color: #1976d2;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .info-box p {
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        h2 {
-            color: var(--navy);
-            font-size: 28px;
-            margin-top: 48px;
-            margin-bottom: 24px;
-            line-height: 1.3;
-            border-bottom: 3px solid var(--yellow);
-            padding-bottom: 12px;
-        }
-
-        h3 {
-            color: var(--navy);
-            font-size: 20px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        ul, ol {
-            margin-left: 24px;
-            margin-bottom: 24px;
-        }
-
-        li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 32px 0;
-            background-color: var(--white);
-        }
-
-        .comparison-table th {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 16px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 16px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .comparison-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .checklist {
-            background-color: var(--cream);
-            padding: 24px;
-            border-radius: 4px;
-            margin: 32px 0;
-        }
-
-        .checklist h3 {
-            margin-top: 0;
-            color: var(--red);
-        }
-
-        .checklist ul {
-            margin-left: 24px;
-        }
-
-        .checklist li {
-            margin-bottom: 12px;
-        }
-
-        .checklist li:before {
-            content: "✓ ";
-            color: var(--red);
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .requirement-box {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 4px;
-            margin: 24px 0;
-        }
-
-        .requirement-box h4 {
-            color: var(--navy);
-            margin-bottom: 12px;
-        }
-
-        .requirement-box p {
-            margin: 8px 0;
-        }
-
-        .faq-section {
-            margin-top: 48px;
-        }
-
-        .faq-item {
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--light-gray);
-            padding-bottom: 24px;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .faq-question:hover {
-            color: var(--red);
-        }
-
-        .faq-answer {
-            color: var(--dark-gray);
-            line-height: 1.8;
-            display: none;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        .faq-toggle {
-            color: var(--red);
-            font-weight: bold;
-            min-width: 20px;
-        }
-
-        .cta-section {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 24px;
-            border-radius: 4px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            border-bottom-color: var(--yellow);
-            margin-top: 0;
-        }
-
-        .cta-section p {
-            color: var(--cream);
-            font-size: 18px;
-            margin-bottom: 24px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--red);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--navy);
-            text-decoration: none;
-        }
-
-        .btn-secondary {
-            background-color: var(--yellow);
-            color: var(--navy);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        .btn-white {
-            background-color: var(--white);
-            color: var(--navy);
-        }
-
-        .btn-white:hover {
-            background-color: var(--cream);
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px 16px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        footer p {
-            margin-bottom: 12px;
-            color: var(--cream);
-        }
-
-        footer a {
-            color: var(--yellow);
-        }
-
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--navy);
-            padding: 12px 16px;
-            z-index: 99;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-        }
-
-        .sticky-bar.visible {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .sticky-bar .btn {
-            padding: 12px 24px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-
-            .intro-text {
-                font-size: 16px;
-            }
-
-            .comparison-table {
-                font-size: 14px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 12px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 24px 12px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            header {
-                padding: 12px;
-            }
-
-            .breadcrumb {
-                font-size: 12px;
-                padding: 12px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .comparison-table {
-                font-size: 12px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 8px;
-            }
-
-            .warning-box {
-                padding: 16px;
-            }
-        }
-    </style>
+    
         <!-- Related Guides -->
         <section style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--light-gray);">
             <h2 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">Related Guides</h2>
@@ -1017,125 +514,65 @@
         <section class="faq-section">
             <h2>Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What is Convenio Especial and how is it different from standard NLV?
-                </div>
-                <div class="faq-answer">
-                    <p>Convenio Especial is a special NLV category for European Union/EEA pensioners and retirees with European public pensions. Standard NLV is for non-residents with passive income from any source. The key difference: Convenio Especial applicants access Spanish public healthcare (Seguridad Social) instead of requiring private insurance. This makes it ideal for older retirees.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What is Convenio Especial and how is it different from standard NLV?</summary>
+  <p>Convenio Especial is a special NLV category for European Union/EEA pensioners and retirees with European public pensions. Standard NLV is for non-residents with passive income from any source. The key difference: Convenio Especial applicants access Spanish public healthcare (Seguridad Social) instead of requiring private insurance. This makes it ideal for older retirees.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I switch from standard NLV to Convenio Especial during renewal?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, you can switch from standard NLV to Convenio Especial during your renewal, but this requires careful planning. Both visa categories must meet financial requirements and health insurance rules. The application process differs slightly—Convenio Especial routes through Social Security rather than the standard immigration office, which changes your documentation path.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I switch from standard NLV to Convenio Especial during renewal?</summary>
+  <p>Yes, you can switch from standard NLV to Convenio Especial during your renewal, but this requires careful planning. Both visa categories must meet financial requirements and health insurance rules. The application process differs slightly—Convenio Especial routes through Social Security rather than the standard immigration office, which changes your documentation path.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Do I need to end my current renewal to switch to Convenio Especial?
-                </div>
-                <div class="faq-answer">
-                    <p>No. You can switch visa categories during a single renewal appointment. However, you must notify your consulate in advance that you intend to change categories. Some consulates require submitting additional Convenio Especial documentation with your standard renewal application. Others prefer separate appointments. Contact your specific consulate before your renewal date to clarify their process.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Do I need to end my current renewal to switch to Convenio Especial?</summary>
+  <p>No. You can switch visa categories during a single renewal appointment. However, you must notify your consulate in advance that you intend to change categories. Some consulates require submitting additional Convenio Especial documentation with your standard renewal application. Others prefer separate appointments. Contact your specific consulate before your renewal date to clarify their process.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What are the financial requirements for Convenio Especial?
-                </div>
-                <div class="faq-answer">
-                    <p>Convenio Especial has the same financial baseline as standard NLV: €1,080 monthly income and €16,200 in reserves (adjusted annually). However, the income source must be from a European Union or EEA public pension scheme. Private pensions, retirement account distributions, or income from other sources don't qualify. Your pension documentation must show clearly it's from an EU/EEA public system.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What are the financial requirements for Convenio Especial?</summary>
+  <p>Convenio Especial has the same financial baseline as standard NLV: €1,080 monthly income and €16,200 in reserves (adjusted annually). However, the income source must be from a European Union or EEA public pension scheme. Private pensions, retirement account distributions, or income from other sources don't qualify. Your pension documentation must show clearly it's from an EU/EEA public system.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What health insurance documentation do I need for Convenio Especial?
-                </div>
-                <div class="faq-answer">
-                    <p>Convenio Especial holders typically access Spanish public healthcare rather than private insurance. You'll need proof that you qualify for Seguridad Social healthcare access—usually through your EU pension status and age. Your pension documentation serves as healthcare verification. Some consulates may still request proof of private backup insurance. Confirm requirements with your specific consulate.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What health insurance documentation do I need for Convenio Especial?</summary>
+  <p>Convenio Especial holders typically access Spanish public healthcare rather than private insurance. You'll need proof that you qualify for Seguridad Social healthcare access—usually through your EU pension status and age. Your pension documentation serves as healthcare verification. Some consulates may still request proof of private backup insurance. Confirm requirements with your specific consulate.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Is Convenio Especial easier to get than standard NLV?
-                </div>
-                <div class="faq-answer">
-                    <p>Not necessarily easier, just different. Convenio Especial has one major advantage: EU/EEA pension documentation is typically clearer and less subject to interpretation than passive income from investments or business. However, Convenio Especial has stricter requirements: your income must be specifically from EU/EEA public pensions. Standard NLV is more flexible on income sources.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Is Convenio Especial easier to get than standard NLV?</summary>
+  <p>Not necessarily easier, just different. Convenio Especial has one major advantage: EU/EEA pension documentation is typically clearer and less subject to interpretation than passive income from investments or business. However, Convenio Especial has stricter requirements: your income must be specifically from EU/EEA public pensions. Standard NLV is more flexible on income sources.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What documentation proves I have a European public pension?
-                </div>
-                <div class="faq-answer">
-                    <p>You need official documentation from the EU/EEA pension administrator showing: your name, pension amount (in euros or converted), payment frequency (monthly, annual, etc.), payment method, and official certification that it's an EU/EEA public pension. Pension statements from your home country's social security agency work best. Bank statements showing consistent deposits from official pension sources also help. Notarized copies may be required.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What documentation proves I have a European public pension?</summary>
+  <p>You need official documentation from the EU/EEA pension administrator showing: your name, pension amount (in euros or converted), payment frequency (monthly, annual, etc.), payment method, and official certification that it's an EU/EEA public pension. Pension statements from your home country's social security agency work best. Bank statements showing consistent deposits from official pension sources also help. Notarized copies may be required.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if I have both EU pension and private income?
-                </div>
-                <div class="faq-answer">
-                    <p>If you have both pension income and private income (rental property, investments, etc.), you can choose which visa category to apply under. If EU pension income alone meets the €1,080 minimum, Convenio Especial is typically simpler. If private income is significant, standard NLV gives more flexibility. Consult with a visa specialist about which suits your situation better.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if I have both EU pension and private income?</summary>
+  <p>If you have both pension income and private income (rental property, investments, etc.), you can choose which visa category to apply under. If EU pension income alone meets the €1,080 minimum, Convenio Especial is typically simpler. If private income is significant, standard NLV gives more flexibility. Consult with a visa specialist about which suits your situation better.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Does switching to Convenio Especial affect my current residence?
-                </div>
-                <div class="faq-answer">
-                    <p>No. Switching to Convenio Especial during renewal doesn't affect your current residence, job, or legal status in Spain. It's simply a renewal of your visa with a different category. You remain resident in the same location with the same rights. The change is purely administrative—updating which visa category you hold for future renewals.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Does switching to Convenio Especial affect my current residence?</summary>
+  <p>No. Switching to Convenio Especial during renewal doesn't affect your current residence, job, or legal status in Spain. It's simply a renewal of your visa with a different category. You remain resident in the same location with the same rights. The change is purely administrative—updating which visa category you hold for future renewals.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    Can I later switch back from Convenio Especial to standard NLV?
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, but only if your circumstances change. If you lose your EU pension eligibility or want to include other income sources, you can switch back to standard NLV at your next renewal. Both categories are equally valid. However, constantly switching between categories looks inconsistent—make the switch you intend to stick with for at least 2-3 renewal cycles.</p>
-                </div>
-            </div>
+            <details>
+  <summary>Can I later switch back from Convenio Especial to standard NLV?</summary>
+  <p>Yes, but only if your circumstances change. If you lose your EU pension eligibility or want to include other income sources, you can switch back to standard NLV at your next renewal. Both categories are equally valid. However, constantly switching between categories looks inconsistent—make the switch you intend to stick with for at least 2-3 renewal cycles.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    What if my EU pension is below €1,080 per month?
-                </div>
-                <div class="faq-answer">
-                    <p>If your EU pension alone doesn't meet the €1,080 monthly requirement, you have two options: (1) combine it with other income (rental, investments, etc.) and apply as standard NLV, or (2) wait until your pension increases to meet the minimum. You cannot reduce the financial requirement by applying for Convenio Especial—the minimum income threshold is the same for both categories.</p>
-                </div>
-            </div>
+            <details>
+  <summary>What if my EU pension is below €1,080 per month?</summary>
+  <p>If your EU pension alone doesn't meet the €1,080 monthly requirement, you have two options: (1) combine it with other income (rental, investments, etc.) and apply as standard NLV, or (2) wait until your pension increases to meet the minimum. You cannot reduce the financial requirement by applying for Convenio Especial—the minimum income threshold is the same for both categories.</p>
+</details>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('active')">
-                    <span class="faq-toggle">+</span>
-                    How do I notify my consulate that I'm switching to Convenio Especial?
-                </div>
-                <div class="faq-answer">
-                    <p>Contact your consulate's foreign affairs office at least 4 weeks before your scheduled renewal appointment. State clearly: 'I currently hold [standard/non-resident] NLV and would like to renew as Convenio Especial.' Ask them to confirm: (1) if this can be done in a single appointment, (2) what additional documentation is required, and (3) whether they want it noted on your renewal application or submitted as a separate request. Get this in writing.</p>
-                </div>
-            </div>
+            <details>
+  <summary>How do I notify my consulate that I'm switching to Convenio Especial?</summary>
+  <p>Contact your consulate's foreign affairs office at least 4 weeks before your scheduled renewal appointment. State clearly: 'I currently hold [standard/non-resident] NLV and would like to renew as Convenio Especial.' Ask them to confirm: (1) if this can be done in a single appointment, (2) what additional documentation is required, and (3) whether they want it noted on your renewal application or submitted as a separate request. Get this in writing.</p>
+</details>
         </section>
 
         <div class="cta-section">
@@ -1183,16 +620,6 @@
         });
 
         // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const toggle = this.querySelector('.faq-toggle');
-
-                answer.classList.toggle('active');
-                toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-            });
-        });
     </script>
 </body>
 </html>
