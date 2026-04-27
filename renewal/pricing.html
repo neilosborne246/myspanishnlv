@@ -811,14 +811,14 @@ footer a:hover { color: var(--white); }
     closeBtn.addEventListener('click', () => {
       menu.classList.remove('open');
       toggle.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     });
 
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
         toggle.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
       });
     });
   </script>

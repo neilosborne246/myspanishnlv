@@ -1138,12 +1138,12 @@
     function openMenu() {
       menu.classList.add('open');
       toggle.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('menu-open');
     }
     function closeMenu() {
       menu.classList.remove('open');
       toggle.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     }
     toggle.addEventListener('click', () => {
       menu.classList.contains('open') ? closeMenu() : openMenu();

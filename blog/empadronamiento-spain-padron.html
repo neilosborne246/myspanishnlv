@@ -431,8 +431,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding
 </div>
 <script>
 const _t=document.querySelector('.nav-toggle'),_m=document.getElementById('mobileMenu'),_c=document.getElementById('mobileMenuClose');
-function _open(){_m.classList.add('open');_t.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
-function _close(){_m.classList.remove('open');_t.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+function _open(){_m.classList.add('open');_t.setAttribute('aria-expanded','true');document.body.classList.add('menu-open');}
+function _close(){_m.classList.remove('open');_t.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');}
 if(_t&&_m&&_c){_t.addEventListener('click',()=>_m.classList.contains('open')?_close():_open());_c.addEventListener('click',_close);_m.querySelectorAll('a').forEach(a=>a.addEventListener('click',_close));}
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.closest('.faq-item'),o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!o){i.classList.add('open');q.setAttribute('aria-expanded','true');}});});
 </script>

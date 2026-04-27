@@ -423,8 +423,8 @@
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.getElementById('mobileMenu');
     const closeBtn = document.getElementById('mobileMenuClose');
-    function openMenu(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-    function closeMenu(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    function openMenu(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.classList.add('menu-open'); }
+    function closeMenu(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); }
     toggle?.addEventListener('click', () => menu.classList.contains('open') ? closeMenu() : openMenu());
     closeBtn?.addEventListener('click', closeMenu);
     menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));

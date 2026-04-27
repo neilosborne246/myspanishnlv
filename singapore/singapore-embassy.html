@@ -561,13 +561,13 @@
     mobileMenu.classList.add('open');
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
   }
   function closeMenu() {
     mobileMenu.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   }
 
   navToggle?.addEventListener('click', () => {
