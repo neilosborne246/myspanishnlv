@@ -23,6 +23,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+# ─── Content consolidation 301s (duplicate posts merged) ─────
+RewriteRule ^blog/183-day-rule-spain-tax\.html$ /blog/183-day-rule-spain-tax-status.html [R=301,L]
+RewriteRule ^blog/nlv-renewal-documents-2026-checklist\.html$ /blog/nlv-renewal-documents-2026.html [R=301,L]
+
 # ─── Clean URLs: trailing slash → .html ──────────────────────
 # /page/ → /page.html  (if .html file exists and /page/ is not a real dir)
 RewriteCond %{REQUEST_FILENAME} !-f
