@@ -29,6 +29,9 @@ RewriteRule ^blog/nlv-renewal-documents-2026-checklist(?:\.html|/)?$ /blog/nlv-r
 RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
 RewriteRule ^ /%1 [R=301,L]
 
+# Duplicate country guide retired into the fuller USA guide
+RewriteRule ^by-country/from-usa(?:\.html|/)?$ /usa/nlv-from-usa.html [R=301,L]
+
 # Hub pages whose name is also a folder (the folder has no index → was 403)
 RewriteRule ^(application-process|by-country|compare|for|health-insurance|life-in-spain|requirements|services|tax)/?$ /$1.html [R=301,L]
 
