@@ -15,17 +15,35 @@ AddType font/woff2 .woff2
 # ─── Rewrite Engine ─────────────────────────────────────────
 RewriteEngine On
 
-# Force www. (uncomment when DNS is confirmed)
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# Force HTTPS and the non-www host (apex is the canonical host)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://myspanishnlv.com%{REQUEST_URI} [R=301,L]
 
 # ─── Content consolidation 301s (duplicate posts merged) ─────
-RewriteRule ^blog/183-day-rule-spain-tax\.html$ /blog/183-day-rule-spain-tax-status.html [R=301,L]
-RewriteRule ^blog/nlv-renewal-documents-2026-checklist\.html$ /blog/nlv-renewal-documents-2026.html [R=301,L]
+RewriteRule ^blog/183-day-rule-spain-tax(?:\.html|/)?$ /blog/183-day-rule-spain-tax-status.html [R=301,L]
+RewriteRule ^blog/nlv-renewal-documents-2026-checklist(?:\.html|/)?$ /blog/nlv-renewal-documents-2026.html [R=301,L]
+
+# ─── Canonical URL format: pages live at /path.html ──────────
+# index.html is served at its directory URL (/ , /blog/ …)
+RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
+RewriteRule ^ /%1 [R=301,L]
+
+# Hub pages whose name is also a folder (the folder has no index → was 403)
+RewriteRule ^(application-process|by-country|compare|for|health-insurance|life-in-spain|requirements|services|tax)/?$ /$1.html [R=301,L]
+
+# Folders without an index page → the page they stand for (was 403)
+RewriteRule ^usa/?$ /usa/nlv-from-usa.html [R=301,L]
+RewriteRule ^canada/?$ /by-country/from-canada.html [R=301,L]
+RewriteRule ^uk/?$ /by-country/from-uk.html [R=301,L]
+RewriteRule ^australia/?$ /by-country/from-australia.html [R=301,L]
+RewriteRule ^new-zealand/?$ /by-country/from-new-zealand.html [R=301,L]
+RewriteRule ^ireland/?$ /by-country/from-ireland-non-eu.html [R=301,L]
+RewriteRule ^south-africa/?$ /by-country/from-south-africa.html [R=301,L]
+RewriteRule ^hong-kong/?$ /hong-kong/nlv-from-hong-kong.html [R=301,L]
+RewriteRule ^singapore/?$ /singapore/nlv-from-singapore.html [R=301,L]
+RewriteRule ^uae/?$ /uae/nlv-from-uae.html [R=301,L]
+RewriteRule ^legal/?$ /legal/legal-statement.html [R=301,L]
 
 # ─── Clean URLs: trailing slash → .html ──────────────────────
 # /page/ → /page.html  (if .html file exists and /page/ is not a real dir)
@@ -79,6 +97,6 @@ ErrorDocument 404 /404.html
 <FilesMatch "\.(py|sh|md|xlsx|docx|json\.bak)$">
   Require all denied
 </FilesMatch>
-<FilesMatch "^(TEMPLATE|MASTER|rebuild_|batch_|enhance_|expand_|upgrade_|extract_|apply-template)">
+<FilesMatch "^(TEMPLATE|MASTER|BLOG-TEMPLATE|template-master|rebuild_|batch_|enhance_|expand_|upgrade_|extract_|apply-template)">
   Require all denied
 </FilesMatch>
