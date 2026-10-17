@@ -107,6 +107,8 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # ─── Block junk/dev files from being served ──────────────────
+# Draft content kept for reference only — never public
+RewriteRule ^content-recovery(?:/|$) - [F,L]
 <FilesMatch "\.(py|sh|md|xlsx|docx|json\.bak)$">
   Require all denied
 </FilesMatch>
