@@ -32,17 +32,27 @@ RewriteRule ^ /%1 [R=301,L]
 # Duplicate country guide retired into the fuller USA guide
 RewriteRule ^by-country/from-usa(?:\.html|/)?$ /usa/nlv-from-usa.html [R=301,L]
 
+# Thin country pages retired into the fuller country guides
+RewriteRule ^by-country/from-canada(?:\.html|/)?$ /canada/nlv-from-canada.html [R=301,L]
+RewriteRule ^by-country/from-australia(?:\.html|/)?$ /australia/nlv-from-australia.html [R=301,L]
+RewriteRule ^by-country/from-new-zealand(?:\.html|/)?$ /new-zealand/nlv-from-new-zealand.html [R=301,L]
+RewriteRule ^by-country/from-uk(?:\.html|/)?$ /uk/nlv-from-uk.html [R=301,L]
+RewriteRule ^by-country/from-south-africa(?:\.html|/)?$ /south-africa/nlv-from-south-africa.html [R=301,L]
+
+# renewal.html merged into the /renewal/ hub (directory index is the canonical URL)
+RewriteRule ^renewal\.html$ /renewal/ [R=301,L]
+
 # Hub pages whose name is also a folder (the folder has no index → was 403)
 RewriteRule ^(application-process|by-country|compare|for|health-insurance|life-in-spain|requirements|services|tax)/?$ /$1.html [R=301,L]
 
 # Folders without an index page → the page they stand for (was 403)
 RewriteRule ^usa/?$ /usa/nlv-from-usa.html [R=301,L]
-RewriteRule ^canada/?$ /by-country/from-canada.html [R=301,L]
-RewriteRule ^uk/?$ /by-country/from-uk.html [R=301,L]
-RewriteRule ^australia/?$ /by-country/from-australia.html [R=301,L]
-RewriteRule ^new-zealand/?$ /by-country/from-new-zealand.html [R=301,L]
-RewriteRule ^ireland/?$ /by-country/from-ireland-non-eu.html [R=301,L]
-RewriteRule ^south-africa/?$ /by-country/from-south-africa.html [R=301,L]
+RewriteRule ^canada/?$ /canada/nlv-from-canada.html [R=301,L]
+RewriteRule ^uk/?$ /uk/nlv-from-uk.html [R=301,L]
+RewriteRule ^australia/?$ /australia/nlv-from-australia.html [R=301,L]
+RewriteRule ^new-zealand/?$ /new-zealand/nlv-from-new-zealand.html [R=301,L]
+RewriteRule ^ireland/?$ /ireland/nlv-from-ireland.html [R=301,L]
+RewriteRule ^south-africa/?$ /south-africa/nlv-from-south-africa.html [R=301,L]
 RewriteRule ^hong-kong/?$ /hong-kong/nlv-from-hong-kong.html [R=301,L]
 RewriteRule ^singapore/?$ /singapore/nlv-from-singapore.html [R=301,L]
 RewriteRule ^uae/?$ /uae/nlv-from-uae.html [R=301,L]

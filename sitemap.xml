@@ -61,6 +61,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://myspanishnlv.com/australia/nlv-from-australia.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://myspanishnlv.com/blog/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -1699,37 +1705,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://myspanishnlv.com/by-country/from-australia.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://myspanishnlv.com/by-country/from-canada.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://myspanishnlv.com/by-country/from-ireland-non-eu.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://myspanishnlv.com/by-country/from-new-zealand.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://myspanishnlv.com/by-country/from-south-africa.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://myspanishnlv.com/by-country/from-uk.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1739,6 +1715,12 @@
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://myspanishnlv.com/canada/nlv-from-canada.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://myspanishnlv.com/canada/toronto-consulate.html</loc>
@@ -1903,6 +1885,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://myspanishnlv.com/ireland/nlv-from-ireland.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://myspanishnlv.com/legal/cookies-policy.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -1961,6 +1949,12 @@
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://myspanishnlv.com/new-zealand/nlv-from-new-zealand.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://myspanishnlv.com/nlv-guides.html</loc>
@@ -2287,6 +2281,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://myspanishnlv.com/south-africa/nlv-from-south-africa.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://myspanishnlv.com/tax.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -2339,6 +2339,12 @@
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://myspanishnlv.com/uk/nlv-from-uk.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://myspanishnlv.com/usa/chicago-consulate.html</loc>
