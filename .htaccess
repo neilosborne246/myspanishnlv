@@ -26,6 +26,19 @@ RewriteRule ^blog/nlv-renewal-documents-2026-checklist(?:\.html|/)?$ /blog/nlv-r
 RewriteRule ^legal/cookie-policy(?:\.html|/)?$ /legal/cookies-policy.html [R=301,L]
 RewriteRule ^blog/what-is-modelo-ex01-how-to-fill(?:\.html|/)?$ /blog/what-is-modelo-ex01-how-to-complete.html [R=301,L]
 
+# Insurance consolidation (24 Oct 2026): duplicate insurance posts merged into their retained pages
+RewriteRule ^blog/how-much-health-insurance-cost-spain-nlv-2026(?:\.html|/)?$ /blog/how-much-does-nlv-compliant-health-insurance-cost-spain-2026.html [R=301,L]
+RewriteRule ^blog/how-much-health-insurance-cost-spain-nlv(?:\.html|/)?$ /blog/how-much-does-nlv-compliant-health-insurance-cost-spain-2026.html [R=301,L]
+RewriteRule ^blog/nlv-compliant-health-insurance-plain-english-guide(?:\.html|/)?$ /requirements/health-insurance-requirement.html [R=301,L]
+RewriteRule ^blog/nlv-compliant-health-insurance-what-is-plain-english-guide(?:\.html|/)?$ /requirements/health-insurance-requirement.html [R=301,L]
+RewriteRule ^blog/nlv-compliant-health-insurance-spain(?:\.html|/)?$ /requirements/health-insurance-requirement.html [R=301,L]
+RewriteRule ^blog/health-insurance-spain-nlv-consulate-requirements(?:\.html|/)?$ /requirements/health-insurance-requirement.html [R=301,L]
+RewriteRule ^blog/nlv-renewal-health-insurance(?:\.html|/)?$ /renewal/health-insurance-renewal.html [R=301,L]
+RewriteRule ^blog/nlv-renewal-health-insurance-policy(?:\.html|/)?$ /renewal/health-insurance-renewal.html [R=301,L]
+RewriteRule ^blog/health-insurance-no-copayments-spain(?:\.html|/)?$ /health-insurance/no-copay-health-insurance.html [R=301,L]
+RewriteRule ^blog/register-for-spanish-healthcare-nlv-holder(?:\.html|/)?$ /blog/register-spanish-public-healthcare-nlv.html [R=301,L]
+RewriteRule ^blog/healthcare-spain-retirees-nlv-access(?:\.html|/)?$ /blog/healthcare-spain-retirees-guide.html [R=301,L]
+
 # ─── Canonical URL format: pages live at /path.html ──────────
 # index.html is served at its directory URL (/ , /blog/ …)
 RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
