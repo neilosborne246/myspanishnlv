@@ -1,0 +1,13 @@
+/* Navigation fit: the desktop nav now carries "Health Insurance". Between the existing mobile
+   breakpoint (900px) and 1400px, use the existing hamburger menu instead of a squeezed link row;
+   above 1400px, tighten spacing and keep labels on one line. Only applies to navs that have a
+   hamburger toggle. */
+@media (min-width: 901px) and (max-width: 1400px) {
+  nav:has(.nav-toggle) ul.nav-links { display: none !important; }
+  nav:has(.nav-toggle) .nav-toggle { display: block !important; }
+}
+@media (min-width: 1401px) {
+  nav:has(.nav-toggle) ul.nav-links { gap: 1.6rem !important; }
+  nav:has(.nav-toggle) ul.nav-links a { white-space: nowrap; }
+  nav:has(.nav-toggle) .nav-logo { flex-shrink: 0; }
+}
