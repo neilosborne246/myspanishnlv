@@ -1,0 +1,71 @@
+/* Site header, mobile menu, mobile bar and footer only - extracted from main.css for legacy pages with their own styles */
+:root{--navy:#0c1930;--navy-mid:#1a3a5c;--red:#be0011;--red-deep:#8c000d;--cream:#f8f7f4;--yellow:#facf39;--text-muted-light:#8a9bb0;--text-muted:#5a6478;--border-light:#dce3ed;--border-dark:rgba(255,255,255,0.08);--black:#1a1a1a;--white:#ffffff;--ff-display:'Bricolage Grotesque','Inter',system-ui,sans-serif;--ff-body:'Inter',system-ui,-apple-system,sans-serif;--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-pill:999px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--yellow);color:var(--navy);padding:.5rem 1rem;z-index:200;font-weight:500}
+.skip-link:focus{left:1rem;top:1rem}
+nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 4rem;background:rgba(12,25,48,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-dark)}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:108px;width:auto}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links a{color:var(--text-muted-light);text-decoration:none;font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--red)!important;color:var(--white)!important;padding:.55rem 1.4rem;border-radius:var(--r-pill);font-weight:500!important;transition:background .2s!important;letter-spacing:.04em!important}
+.nav-cta:hover{background:var(--red-deep)!important}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;position:relative;z-index:10001}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:transform .3s,opacity .3s}
+.nav-toggle.active{position:fixed;top:1.1rem;right:1.5rem;z-index:10001}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0c1930;z-index:10000;flex-direction:column;justify-content:flex-start;align-items:center;padding-top:4.5rem;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.mobile-menu.open{display:flex}
+.mobile-menu-close{position:absolute;top:1.1rem;right:1.5rem;background:none;border:1px solid rgba(255,255,255,.3);color:var(--white);font-size:1.3rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer}
+.mobile-menu a{display:block;width:100%;text-align:center;padding:1.3rem 2rem;color:var(--white);text-decoration:none;font-size:1.15rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu a:first-child{border-top:1px solid rgba(255,255,255,.1)}
+.mobile-menu a:hover{background:rgba(255,255,255,.05)}
+.mobile-menu-bottom{width:100%;padding:1.5rem 2rem 2rem;display:flex;flex-direction:column;gap:.75rem;margin-top:auto}
+.mm-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted-light);text-align:center;margin-top:.5rem}
+.mm-pill{display:block;width:100%;text-align:center;padding:.85rem 1.5rem;border-radius:var(--r-pill);font-size:.9rem;font-weight:600;text-decoration:none;letter-spacing:.04em;border:none;transition:background .2s,border-color .2s}
+.mm-pill.pill-red{background:var(--red);color:var(--white)}
+.mm-pill.pill-red:hover{background:var(--red-deep)}
+.mm-pill.pill-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.25)}
+.mm-pill.pill-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+.mm-pill.pill-yellow{background:var(--yellow);color:var(--navy)}
+.mm-pill.pill-yellow:hover{background:#e8bf30}
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--navy);border-top:1px solid var(--border-dark);padding:.75rem 1rem;gap:.5rem}
+.mobile-bar a{flex:1;text-align:center;padding:.75rem .5rem;border-radius:var(--r-pill);font-size:.85rem;font-weight:600;text-decoration:none;letter-spacing:.03em}
+.mobile-bar .bar-apply{background:var(--red);color:var(--white)}
+.mobile-bar .bar-contact{background:transparent;border:1px solid var(--cream);color:var(--cream)}
+footer.site-footer{background:var(--navy);border-top:1px solid var(--border-dark);padding:4rem 4rem 2rem}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem}
+.footer-logo{margin-bottom:1rem}
+.footer-logo img{height:108px;width:auto}
+.footer-tagline{font-size:.88rem;color:var(--text-muted-light);line-height:1.6;margin-bottom:1.25rem}
+.footer-email a{color:var(--yellow);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+.footer-email a:hover{color:var(--white)}
+.footer-heading{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;font-weight:600}
+.footer-list{list-style:none}
+.footer-list li{margin-bottom:.6rem}
+.footer-list a{color:var(--text-muted-light);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-list a:hover{color:var(--white)}
+.footer-bottom{max-width:1100px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border-dark);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.footer-copy{font-size:.78rem;color:var(--text-muted-light)}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:var(--text-muted-light);text-decoration:none;font-size:.78rem;transition:color .2s}
+.footer-legal a:hover{color:var(--white)}
+.footer-pill{display:block;text-align:center;background:var(--yellow);color:var(--navy);padding:.45rem 1rem;border-radius:var(--r-pill);font-size:.78rem;font-weight:600;text-decoration:none;margin-bottom:.45rem;transition:opacity .2s}
+.footer-pill:hover{opacity:.82}
+.footer-brand{display:contents}
+.footer-links{display:contents}
+.footer-col-heading{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;font-weight:600}
+@media (max-width:900px){nav.site-nav{padding:1rem 1.5rem;flex-direction:row;align-items:center}.nav-logo img{height:80px!important;width:auto!important}.nav-toggle{display:flex;flex-direction:column;gap:0;background:none;border:none;cursor:pointer;margin-left:auto}.nav-toggle span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all 0.3s ease}.nav-links{display:none!important;flex-direction:column;gap:0;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-dark)}.nav-links.open{display:flex!important}.nav-links li{width:100%}.nav-links a{display:block;padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1)}.nav-links a.nav-cta{padding:.85rem 2rem;text-align:center;border:none}.mobile-bar{display:flex}footer.site-footer{padding:3rem 1.5rem 1.5rem}.footer-grid{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;align-items:flex-start}}
+/* Neutralise legacy page rules that style every <nav>: these pages define nav{...}, nav a{...}, nav ul{...} */
+nav.site-nav{box-shadow:none}
+nav.site-nav ul.nav-links{padding:0}
+@media (min-width:1401px){nav.site-nav .nav-links a:not(.nav-cta){display:inline;margin:0;padding:0;border-bottom:0;font-weight:400}nav.site-nav .nav-links a.nav-cta{display:inline}}
+nav.site-nav a.nav-logo,footer.site-footer .footer-logo a{color:inherit;font-weight:inherit;font-size:inherit}
+nav.site-nav .nav-links a.nav-cta,nav.site-nav a.nav-logo{margin:0;border-bottom:0}
+nav.footer-legal{background:none;padding:0;position:static;box-shadow:none;z-index:auto}
+nav.footer-legal a{display:inline;margin:0;padding:0;border-bottom:0;font-weight:400}
+/* Chrome text inherits from these roots on standard pages; legacy pages have their own body font and colour */
+nav.site-nav,div.mobile-menu,div.mobile-bar,footer.site-footer{font-family:Inter,system-ui,-apple-system,sans-serif;color:#fff;font-size:16px;line-height:1.6;letter-spacing:normal;font-weight:400}
