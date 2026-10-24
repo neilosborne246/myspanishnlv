@@ -50,17 +50,50 @@
     </script>
 
     
+  <link rel="stylesheet" href="/assets/nav-fit.css?v=1" />
+  <style>.legacy-offset{padding-top:150px}@media (max-width:900px){.legacy-offset{padding-top:114px}}</style>
 </head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/renewal/">Renewal Hub</a>
-        <a href="/renewal/bls-directory.html">BLS Directory</a>
-        <a href="/health-insurance.html">Health Insurance</a>
-    </nav>
+<body class="legacy-offset">
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <header>
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links nav-desktop" role="list">
+    <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+    <li><a href="/requirements.html">Requirements</a></li>
+    <li><a href="/pricing.html">Pricing</a></li>
+    <li><a href="/health-insurance.html">Health Insurance</a></li>
+    <li><a href="/how-it-works.html">How It Works</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/blog/">Guides</a></li>
+    <li><a href="https://dashboard.platinumlegalspain.com/nlv" class="nav-cta" rel="noopener noreferrer">Start My Application</a></li>
+  </ul>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation">✕</button>
+  <a href="/">Home</a>
+  <a href="/what-is-nlv.html">What is the NLV?</a>
+  <a href="/requirements.html">Requirements</a>
+  <a href="/application-process.html">Application Process</a>
+  <a href="/health-insurance.html">Health Insurance</a>
+  <a href="/renewal/">Renewal</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/how-it-works.html">How It Works</a>
+  <a href="/faq.html">FAQ</a>
+    <a href="/blog/">Guides</a>
+    <a href="/contact.html">Contact</a>
+    <div class="mobile-menu-bottom">
+    <p class="mm-label">Ready to apply?</p>
+    <a href="https://dashboard.platinumlegalspain.com/nlv" class="mm-pill pill-red" rel="noopener noreferrer">Start My Application</a>
+    <a href="mailto:hello@myspanishnlv.com" class="mm-pill pill-outline">Contact Us</a>
+  </div>
+</div>
+
+<header>
         <h1>BLS Application Guide</h1>
         <p class="header-subtitle">Complete step-by-step guide to submitting your Spain Non-Lucrative Visa application through BLS</p>
         <div class="breadcrumb">
@@ -68,7 +101,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- Table of Contents -->
         <div class="toc">
             <h2>📑 Quick Navigation</h2>
@@ -517,5 +550,79 @@
             faqItem.classList.toggle('active');
         }
     </script>
+
+<div class="mobile-bar">
+  <a href="https://dashboard.platinumlegalspain.com/nlv" class="bar-apply" rel="noopener noreferrer">Start My Application</a>
+  <a href="mailto:hello@myspanishnlv.com" class="bar-contact">Contact Us</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a></div>
+      <p class="footer-tagline">Spain's Non-Lucrative Visa — online application service managed by experienced immigration specialists at Platinum Legal Spain.</p>
+      <p class="footer-email"><a href="mailto:hello@myspanishnlv.com">hello@myspanishnlv.com</a></p>
+        <p class="footer-heading" style="margin-top:1.25rem;">Health Insurance</p>
+        <ul class="footer-list">
+          <li><a href="/health-insurance.html">NLV Health Insurance</a></li>
+          <li><a href="/health-insurance/quote.html">Get a Quote</a></li>
+          <li><a href="/health-insurance/insurance-only.html">Insurance Without Our Visa Service</a></li>
+          <li><a href="/renewal/health-insurance-renewal.html">Renewal Insurance</a></li>
+        </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-list">
+        <li><a href="/services/non-lucrative-visa-application.html">NLV Application</a></li>
+        <li><a href="/services/non-lucrative-visa-renewal.html">NLV Renewal</a></li>
+        <li><a href="/services/family-application.html">Family Application</a></li>
+        <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-list">
+        <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+        <li><a href="/requirements.html">NLV Requirements</a></li>
+        <li><a href="/how-it-works.html">How It Works</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+              <p class="footer-heading">Other Visa Types</p>
+        <a href="https://myspanishvisa.com" class="footer-pill" rel="noopener noreferrer">My Spanish Visa</a>
+        <a href="https://myspanishdnv.com" class="footer-pill" rel="noopener noreferrer">Digital Nomad Visa</a>
+        <a href="https://myspanishstudentvisa.com" class="footer-pill" rel="noopener noreferrer">Student Visa</a>
+        <p class="footer-heading">Company</p>
+      <ul class="footer-list">
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 My Spanish NLV. Operated by Retail Consulting UK Ltd (Company No. 06711242). Legal services delivered in partnership with Platinum Legal Spain.</p>
+    <nav class="footer-legal">
+      <a href="/legal/privacy-policy.html">Privacy Policy</a>
+      <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="/legal/cookies-policy.html">Cookie Policy</a>
+      <a href="/legal/refund-policy.html">Refund Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  function openMenu() { navToggle.classList.add('active'); navToggle.setAttribute('aria-expanded','true'); mobileMenu.classList.add('open'); document.body.classList.add('menu-open'); }
+  function closeMenu() { navToggle.classList.remove('active'); navToggle.setAttribute('aria-expanded','false'); mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); }
+  navToggle?.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+  closeBtn?.addEventListener('click', closeMenu);
+</script>
+<script src="/assets/insurance-tracking.js?v=2" defer></script>
 </body>
 </html>
