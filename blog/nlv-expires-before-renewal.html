@@ -336,5 +336,6 @@ function _close(){_m.classList.remove('open');_t.setAttribute('aria-expanded','f
 if(_t&&_m&&_c){_t.addEventListener('click',()=>_m.classList.contains('open')?_close():_open());_c.addEventListener('click',_close);_m.querySelectorAll('a').forEach(a=>a.addEventListener('click',_close));}
 document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.closest('.faq-item'),o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!o){i.classList.add('open');q.setAttribute('aria-expanded','true');}});});
 </script>
+<script src="/assets/insurance-tracking.js?v=1" defer></script>
 </body>
 </html>
