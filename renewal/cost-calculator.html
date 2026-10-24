@@ -208,13 +208,13 @@
 
             <div class="cost-breakdown">
                 <div class="cost-line">
-                    <span class="cost-label">Stage 1 Service Fee (€300 × <span id="familyCount1">1</span>)</span>
-                    <span class="cost-value">€<span id="stage1Cost">300</span></span>
+                    <span class="cost-label">Stage 1 Service Fee (one adult)</span>
+                    <span class="cost-value"><span id="stage1Cost">€300</span></span>
                 </div>
 
                 <div class="cost-line">
-                    <span class="cost-label">Stage 2 Service Fee (€399 × <span id="familyCount2">1</span>)</span>
-                    <span class="cost-value">€<span id="stage2Cost">399</span></span>
+                    <span class="cost-label">Stage 2 Service Fee (one adult, payable after approval)</span>
+                    <span class="cost-value"><span id="stage2Cost">€399</span></span>
                 </div>
 
                 <div class="cost-line">
@@ -234,13 +234,17 @@
 
                 <div class="cost-line subtotal">
                     <span class="cost-label"><strong>Service Fee Subtotal (government fees included)</strong></span>
-                    <span class="cost-value">€<span id="subtotal">699</span></span>
+                    <span class="cost-value"><span id="subtotal">€699</span></span>
                 </div>
 
                 <div class="cost-line total">
                     <span class="cost-label"><strong>Total One-Time Cost</strong></span>
-                    <span class="cost-value total-value">€<span id="totalCost">699</span></span>
+                    <span class="cost-value total-value"><span id="totalCost">€699</span></span>
                 </div>
+            </div>
+
+            <div class="note" id="familyQuote" style="display: none;">
+                <strong>Renewing with family?</strong> Family members renewing with you receive a discounted rate, so we price household renewals individually. <a href="https://dashboard.platinumlegalspain.com/nlv-renewal" rel="noopener">Contact us for a family renewal quote</a>.
             </div>
 
             <div class="note">
@@ -291,20 +295,21 @@
             document.getElementById('healthInsLabel').textContent = healthInsCost;
 
             // Update family count displays
-            document.getElementById('familyCount1').textContent = familySize;
-            document.getElementById('familyCount2').textContent = familySize;
             document.getElementById('familyCount3').textContent = familySize;
             document.getElementById('familyCount4').textContent = familySize;
 
             // Calculate costs
-            const stage1 = 300 * familySize;
-            const stage2 = 399 * familySize;
+            // Published price is for one adult; family renewals are quoted individually
+            const isFamily = familySize > 1;
+            const stage1 = 300;
+            const stage2 = 399;
             const totalMedical = hasMedical ? medicalCost * familySize : 0;
             const monthlyHealthIns = hasHealthIns ? healthInsCost / 12 : 0;
 
             // Update cost display
-            document.getElementById('stage1Cost').textContent = stage1;
-            document.getElementById('stage2Cost').textContent = stage2;
+            document.getElementById('stage1Cost').textContent = isFamily ? 'Family quote' : '€' + stage1;
+            document.getElementById('stage2Cost').textContent = isFamily ? 'Family quote' : '€' + stage2;
+            document.getElementById('familyQuote').style.display = isFamily ? 'block' : 'none';
 
             // Update medical line visibility
             const medicalLine = document.getElementById('medicalLine');
@@ -331,8 +336,8 @@
             const subtotal = stage1 + stage2 + totalMedical;
             const total = subtotal;
 
-            document.getElementById('subtotal').textContent = subtotal;
-            document.getElementById('totalCost').textContent = total;
+            document.getElementById('subtotal').textContent = isFamily ? 'Family quote' : '€' + subtotal;
+            document.getElementById('totalCost').textContent = isFamily ? 'Contact us for a family renewal quote' : '€' + total;
         }
 
         function copyCostSummary() {
@@ -346,13 +351,13 @@
             let summary = `NLV Renewal Cost Summary\n`;
             summary += `Family members: ${familySize}\n\n`;
             summary += `Service Fees:\n`;
-            summary += `Stage 1: €${stage1}\n`;
-            summary += `Stage 2: €${stage2}\n`;
+            summary += `Stage 1: ${stage1}\n`;
+            summary += `Stage 2: ${stage2}\n`;
             summary += `Government renewal fees: included\n`;
             if (hasMedical) {
                 summary += `Medical Certificate: €${medical}\n`;
             }
-            summary += `\nTotal: €${total}\n\n`;
+            summary += `\nTotal: ${total}\n\n`;
             summary += `Source: https://myspanishnlv.com/renewal/cost-calculator.html`;
 
             navigator.clipboard.writeText(summary).then(() => {
