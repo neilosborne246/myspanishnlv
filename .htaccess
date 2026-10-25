@@ -41,6 +41,7 @@ RewriteRule ^blog/healthcare-spain-retirees-nlv-access(?:\.html|/)?$ /blog/healt
 
 # Empty consulate guide retired (25 Oct 2026): US applicants are covered by the USA country guide
 RewriteRule ^consulates/spanish-consulate-usa-nlv-guide(?:\.html|/)?$ /usa/nlv-from-usa.html [R=301,L]
+RewriteRule ^consulates/spanish-consulate-germany-nlv-guide(?:\.html|/)?$ /consulates/#germany [R=301,NE,L]
 
 # ─── Canonical URL format: pages live at /path.html ──────────
 # index.html is served at its directory URL (/ , /blog/ …)
