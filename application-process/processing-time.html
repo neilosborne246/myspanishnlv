@@ -198,6 +198,13 @@
     </section>
 
     <section class="light-section" id="legal-decision-period">
+<style>
+#legal-decision-period table{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:.5rem}
+#legal-decision-period th,#legal-decision-period td{border-bottom:1px solid #d9dee7;padding:.65rem .6rem;text-align:left;vertical-align:top}
+#legal-decision-period th{font-weight:600}
+@media (max-width:700px){#legal-decision-period thead{display:none}#legal-decision-period tr{display:block;border:1px solid #d9dee7;border-radius:8px;margin-bottom:1rem;padding:.4rem .2rem}#legal-decision-period td{display:block;border:0;padding:.3rem .6rem}#legal-decision-period td::before{content:attr(data-label);display:block;font-weight:600;font-size:.8rem;opacity:.75}}
+</style>
+
       <div class="container">
         <div class="section-header">
           <h2>Legal Decision Period vs Typical Waits</h2>
@@ -207,9 +214,9 @@
           <table>
             <thead><tr><th>Stage</th><th>Who decides</th><th>Legal period</th><th>Starts when</th><th>If no decision in time</th></tr></thead>
             <tbody>
-              <tr><td>Residence authorisation</td><td>Oficina de Extranjería in Spain</td><td>One month (art. 63.4)</td><td>It receives the consulate's communication of your application</td><td>The application is treated as refused (art. 63.4)</td></tr>
-              <tr><td>Visa issue</td><td>The consulate</td><td>One month (art. 39.5)</td><td>It receives the favourable decision on the authorisation</td><td>The regulation sets no silence rule for this step: contact the consulate in writing</td></tr>
-              <tr><td>General ceiling for authorisation applications</td><td>—</td><td>Three months (LO 4/2000, additional provision 1)</td><td>The day after the application enters the register of the body that must process it</td><td>The application can be treated as refused</td></tr>
+              <tr><td data-label="Stage">Residence authorisation</td><td data-label="Who decides">Oficina de Extranjería in Spain</td><td data-label="Legal period">One month (art. 63.4)</td><td data-label="Starts when">It receives the consulate's communication of your application</td><td data-label="If no decision in time">The application is treated as refused (art. 63.4)</td></tr>
+              <tr><td data-label="Stage">Visa issue</td><td data-label="Who decides">The consulate</td><td data-label="Legal period">One month (art. 39.5)</td><td data-label="Starts when">It receives the favourable decision on the authorisation</td><td data-label="If no decision in time">The regulation sets no silence rule for this step: contact the consulate in writing</td></tr>
+              <tr><td data-label="Stage">General ceiling for authorisation applications</td><td data-label="Who decides">—</td><td data-label="Legal period">Three months (LO 4/2000, additional provision 1)</td><td data-label="Starts when">The day after the application enters the register of the body that must process it</td><td data-label="If no decision in time">The application can be treated as refused</td></tr>
             </tbody>
           </table>
         </div>
@@ -230,12 +237,12 @@
           <table>
             <thead><tr><th>Step</th><th>What drives the time</th></tr></thead>
             <tbody>
-              <tr><td><a href="/requirements/criminal-record-certificate.html">Police certificate</a></td><td>Set by the issuing country — from days to several months (the US FBI check by post is one of the slowest). It must still be in date at your appointment.</td></tr>
-              <tr><td>Apostilles</td><td>Each certificate is apostilled by the country that issued it, after you receive it.</td></tr>
-              <tr><td>Sworn translations</td><td>Done once the apostilled originals are ready; usually days rather than weeks.</td></tr>
-              <tr><td>Medical certificate</td><td>Quick to obtain, but it must be recent at your appointment, so it is usually one of the last documents.</td></tr>
-              <tr><td>Health insurance certificate</td><td>Usually days once the policy is arranged — <a href="/health-insurance.html">see health insurance</a>.</td></tr>
-              <tr><td><a href="/application-process/consulate-appointment.html">Consulate appointment</a></td><td>Availability varies by consulate and season; book so the date falls when your documents are ready and still valid.</td></tr>
+              <tr><td data-label="Step"><a href="/requirements/criminal-record-certificate.html">Police certificate</a></td><td data-label="What drives the time">Set by the issuing country — from days to several months (the US FBI check by post is one of the slowest). It must still be in date at your appointment.</td></tr>
+              <tr><td data-label="Step">Apostilles</td><td data-label="What drives the time">Each certificate is apostilled by the country that issued it, after you receive it.</td></tr>
+              <tr><td data-label="Step">Sworn translations</td><td data-label="What drives the time">Done once the apostilled originals are ready; usually days rather than weeks.</td></tr>
+              <tr><td data-label="Step">Medical certificate</td><td data-label="What drives the time">Quick to obtain, but it must be recent at your appointment, so it is usually one of the last documents.</td></tr>
+              <tr><td data-label="Step">Health insurance certificate</td><td data-label="What drives the time">Usually days once the policy is arranged — <a href="/health-insurance.html">see health insurance</a>.</td></tr>
+              <tr><td data-label="Step"><a href="/application-process/consulate-appointment.html">Consulate appointment</a></td><td data-label="What drives the time">Availability varies by consulate and season; book so the date falls when your documents are ready and still valid.</td></tr>
             </tbody>
           </table>
         </div>
