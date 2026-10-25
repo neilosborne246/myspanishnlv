@@ -108,3 +108,6 @@ body:not(.legacy-offset) main.content-page{padding-top:calc(var(--nav-h) + 1.5re
 .blog-grid>*{min-width:0}
 @media (max-width:900px){.blog-grid{grid-template-columns:minmax(0,1fr)!important}}
 .blog-body table{display:block;max-width:100%;overflow-x:auto}
+nav.site-nav ul.nav-links li a:not(.nav-cta){color:var(--text-muted-light,#8a9bb0);font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:0;padding:0;background:none}
+nav.site-nav ul.nav-links li a:not(.nav-cta):hover,nav.site-nav ul.nav-links li a.active:not(.nav-cta){color:#fff}
+@media (min-width:1401px){nav.site-nav ul.nav-links{flex-wrap:nowrap}nav.site-nav ul.nav-links>li{margin:0;padding:0;line-height:1.6;list-style:none}nav.site-nav ul.nav-links li a:not(.nav-cta){display:inline;line-height:1.6}nav.site-nav ul.nav-links a.nav-cta{padding:.55rem 1.4rem!important;line-height:1.6}}

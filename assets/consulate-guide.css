@@ -1,0 +1,103 @@
+/* Consulate guides (/consulates/spanish-consulate-*): body styles.
+   These pages carry a generic blog-template <style> block with a global margin/padding reset and no rules for
+   their own markup (toc, info/success/warning boxes, tables, accordions, contact cards, stats, timeline).
+   Loaded after site-chrome.css on those six pages only, scoped to body.consulate-guide. */
+body.consulate-guide{background:#f8f7f4;color:#0c1930;margin-top:0!important}
+
+/* hero band: <header> (Canada, renewal hub), .page-hero (UK), or the H1 added to Australia/Germany/USA */
+.consulate-guide>header,.consulate-guide .page-hero{background:#0c1930;color:#fff;padding:3rem 1.5rem 2.5rem;text-align:left;margin:0}
+.consulate-guide>header>*,.consulate-guide .page-hero-inner{max-width:832px;margin-left:auto;margin-right:auto}
+.consulate-guide>header h1,.consulate-guide .page-hero h1,.consulate-guide h1.page-title-added{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;color:#fff;letter-spacing:-.01em}
+.consulate-guide>header p,.consulate-guide .page-hero p{color:rgba(255,255,255,.82);margin-top:.75rem;font-size:1.05rem;line-height:1.6}
+.consulate-guide>header .breadcrumb{margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.6)}
+.consulate-guide>header .breadcrumb a{color:rgba(255,255,255,.8)}
+.consulate-guide .page-hero .hero-actions{margin-top:1.5rem;justify-content:flex-start}
+.consulate-guide .page-hero p{max-width:none;margin-left:0;margin-right:0;text-align:left}
+.consulate-guide h1.page-title-added{max-width:832px!important;margin:0 auto 2.5rem!important;padding:3rem 0 2.5rem!important;border-image:conic-gradient(#0c1930 0 0) fill 0//0 100vmax}
+.consulate-guide main:has(>h1.page-title-added:first-child){padding-top:0}
+body.consulate-guide>h1.page-title-added{padding-left:1.5rem!important;padding-right:1.5rem!important}
+
+/* renewal hub: in-page link bar + contents list sit between the hero and main */
+.consulate-guide>nav:not(.site-nav)>div{justify-content:center;flex-wrap:wrap}
+.consulate-guide>nav:not(.site-nav)>ul{width:calc(100% - 3rem);max-width:832px;margin:2rem auto 0;padding:1.25rem 1.5rem 1.25rem 2.75rem;background:#fff;border-left:4px solid #facf39;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06);list-style:disc}
+.consulate-guide>nav:not(.site-nav)>ul li{margin:.3rem 0}
+.consulate-guide>nav:not(.site-nav)>ul a{color:#0c1930;border-bottom:1px solid #facf39}
+
+/* content column and typography */
+.consulate-guide main{max-width:880px;margin:0 auto;padding:2.5rem 1.5rem 4rem;font-size:1rem;line-height:1.75}
+.consulate-guide main h1.page-title-added+*{margin-top:0}
+.consulate-guide main section{margin:0 0 2.5rem}
+.consulate-guide main h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.45rem,3vw,1.8rem);line-height:1.25;color:#0c1930;margin:2.75rem 0 1rem}
+.consulate-guide main section>h2:first-child{margin-top:0;padding-top:2rem;border-top:1px solid #e3e1db}
+.consulate-guide main h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.22rem;line-height:1.3;color:#0c1930;margin:2rem 0 .7rem}
+.consulate-guide main h4{font-weight:600;font-size:1.02rem;color:#0c1930;margin:1.4rem 0 .5rem}
+.consulate-guide main p{margin:0 0 1rem;color:#33384a}
+.consulate-guide main ul,.consulate-guide main ol{margin:0 0 1.25rem 1.4rem;color:#33384a}
+.consulate-guide main ul{list-style:disc}
+.consulate-guide main ol{list-style:decimal}
+.consulate-guide main li{margin:.35rem 0}
+.consulate-guide main li>ul,.consulate-guide main li>ol{margin-top:.35rem;margin-bottom:.35rem}
+.consulate-guide main strong{color:#0c1930;font-weight:600}
+.consulate-guide main a:not(.cta-button):not(.btn-primary):not(.btn-outline){color:#be0011;text-decoration:underline;text-underline-offset:2px}
+.consulate-guide main .highlight{background:#fff3c4;padding:0 .2em;border-radius:3px}
+
+/* contents box */
+.consulate-guide main .toc{background:#fff;border-left:4px solid #facf39;border-radius:8px;padding:1.5rem 1.75rem;margin:0 0 2.5rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.consulate-guide main .toc h2,.consulate-guide main .toc h3{font-size:1.15rem;margin:0 0 .75rem;padding:0;border:0}
+.consulate-guide main .toc ul,.consulate-guide main .toc ol{margin-bottom:0}
+.consulate-guide main .toc a:not(.cta-button):not(.btn-primary):not(.btn-outline){color:#0c1930;text-decoration:none;border-bottom:1px solid #facf39}
+
+/* note boxes */
+.consulate-guide main .info-box,.consulate-guide main .success-box,.consulate-guide main .warning-box{border-left:4px solid;border-radius:8px;padding:1.15rem 1.4rem;margin:1.5rem 0}
+.consulate-guide main .info-box{background:#eaf2fb;border-color:#2b6cb0}
+.consulate-guide main .success-box{background:#e9f6ee;border-color:#2f855a}
+.consulate-guide main .warning-box{background:#fff7e0;border-color:#d69e2e}
+.consulate-guide main .info-box>:last-child,.consulate-guide main .success-box>:last-child,.consulate-guide main .warning-box>:last-child{margin-bottom:0}
+
+/* tables */
+.consulate-guide main table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;font-size:.94rem;line-height:1.5;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.consulate-guide main th{background:#0c1930;color:#fff;text-align:left;font-weight:600;padding:.75rem 1rem}
+.consulate-guide main td{padding:.7rem 1rem;border-bottom:1px solid #ebe9e3;vertical-align:top;color:#33384a}
+.consulate-guide main tr:last-child td{border-bottom:0}
+@media (max-width:700px){.consulate-guide main table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+
+/* FAQ accordions: shown open so every answer is visible without relying on page scripts */
+.consulate-guide main .accordion-item{background:#fff;border:1px solid #e3e1db;border-radius:8px;margin:.75rem 0;overflow:hidden}
+.consulate-guide main .accordion-header{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-weight:600;color:#0c1930;padding:1rem 1.25rem .4rem;cursor:default}
+.consulate-guide main .accordion-header span:not(.accordion-toggle){display:inline}
+.consulate-guide main .accordion-toggle{display:none}
+.consulate-guide main .accordion-body,.consulate-guide main .accordion-content{display:block!important;max-height:none!important;padding:0 1.25rem 1rem}
+.consulate-guide main .accordion-body>:last-child,.consulate-guide main .accordion-content>:last-child{margin-bottom:0}
+
+/* contact cards, stats, timeline */
+.consulate-guide main .contact-card{background:#fff;border:1px solid #e3e1db;border-radius:8px;padding:1.25rem 1.5rem;margin:1.25rem 0}
+.consulate-guide main .contact-card h3{margin-top:0;color:#be0011}
+.consulate-guide main .contact-item{margin:.5rem 0}
+.consulate-guide main .contact-label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b6b72}
+.consulate-guide main .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:1.5rem 0}
+.consulate-guide main .stat-card{background:#fff;border:1px solid #e3e1db;border-radius:8px;padding:1.25rem;text-align:center}
+.consulate-guide main .stat-card .number{font-family:'Bricolage Grotesque',sans-serif;font-size:1.9rem;font-weight:700;color:#be0011;line-height:1.1}
+.consulate-guide main .stat-card .label{font-size:.88rem;color:#6b6b72;margin-top:.3rem}
+.consulate-guide main .timeline{border-left:3px solid #facf39;padding-left:1.5rem;margin:1.5rem 0}
+.consulate-guide main .timeline-item{position:relative;margin:0 0 1.25rem}
+.consulate-guide main .timeline-item::before{content:'';position:absolute;left:calc(-1.5rem - 8px);top:.45rem;width:13px;height:13px;border-radius:50%;background:#be0011;border:2px solid #f8f7f4}
+
+/* closing call to action and related links */
+.consulate-guide main .cta-box{background:#0c1930;color:#fff;border-radius:12px;padding:2rem 1.75rem;margin:3rem 0;text-align:center}
+.consulate-guide main .cta-box h2,.consulate-guide main .cta-box h3{color:#fff;margin-top:0;padding:0;border:0}
+.consulate-guide main .cta-box p{color:rgba(255,255,255,.85)}
+.consulate-guide main .cta-button{display:inline-block;background:#be0011;color:#fff;font-weight:600;padding:.85rem 2rem;border-radius:40px;margin-top:.5rem;text-decoration:none}
+.consulate-guide main .cta-button:hover{background:#a00010}
+.consulate-guide main .related-links{background:#fff;border:1px solid #e3e1db;border-radius:8px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+.consulate-guide main .related-links h2,.consulate-guide main .related-links h3{margin-top:0;padding:0;border:0;font-size:1.2rem}
+.consulate-guide main .related-links ul{list-style:none;margin:0}
+
+/* disclaimer: white-on-white in the template */
+.consulate-guide .site-disclaimer{color:#6b6b72!important;max-width:880px;margin:0 auto;padding:1.5rem 1.5rem 2rem!important}
+
+@media (max-width:700px){
+  .consulate-guide>header,.consulate-guide .page-hero{padding:2.25rem 1.25rem 2rem}
+  .consulate-guide h1.page-title-added{padding:2.25rem 0 2rem!important;margin-bottom:2rem!important}
+  .consulate-guide main{padding:2rem 1.25rem 3rem}
+  .consulate-guide main .toc,.consulate-guide main .related-links{padding:1.25rem}
+}
