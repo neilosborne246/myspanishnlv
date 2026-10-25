@@ -162,12 +162,12 @@
             <div class="cost-breakdown">
                 <div class="cost-line">
                     <span class="cost-label">Stage 1 Service Fee (one adult)</span>
-                    <span class="cost-value"><span id="stage1Cost">€300</span></span>
+                    <span class="cost-value"><span id="stage1Cost">€299</span></span>
                 </div>
 
                 <div class="cost-line">
-                    <span class="cost-label">Stage 2 Service Fee (one adult, payable after approval)</span>
-                    <span class="cost-value"><span id="stage2Cost">€399</span></span>
+                    <span class="cost-label">Stage 2 Service Fee (one adult, payable at submission to Extranjería)</span>
+                    <span class="cost-value"><span id="stage2Cost">€400</span></span>
                 </div>
 
                 <div class="cost-line">
@@ -381,8 +381,8 @@
             // Calculate costs
             // Published price is for one adult; family renewals are quoted individually
             const isFamily = familySize > 1;
-            const stage1 = 300;
-            const stage2 = 399;
+            const stage1 = 299;
+            const stage2 = 400;
             const totalMedical = hasMedical ? medicalCost * familySize : 0;
             const monthlyHealthIns = hasHealthIns ? healthInsCost / 12 : 0;
 
