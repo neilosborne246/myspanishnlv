@@ -39,6 +39,9 @@ RewriteRule ^blog/health-insurance-no-copayments-spain(?:\.html|/)?$ /health-ins
 RewriteRule ^blog/register-for-spanish-healthcare-nlv-holder(?:\.html|/)?$ /blog/register-spanish-public-healthcare-nlv.html [R=301,L]
 RewriteRule ^blog/healthcare-spain-retirees-nlv-access(?:\.html|/)?$ /blog/healthcare-spain-retirees-guide.html [R=301,L]
 
+# Empty consulate guide retired (25 Oct 2026): US applicants are covered by the USA country guide
+RewriteRule ^consulates/spanish-consulate-usa-nlv-guide(?:\.html|/)?$ /usa/nlv-from-usa.html [R=301,L]
+
 # ─── Canonical URL format: pages live at /path.html ──────────
 # index.html is served at its directory URL (/ , /blog/ …)
 RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
