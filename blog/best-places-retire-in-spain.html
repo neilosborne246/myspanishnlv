@@ -93,37 +93,46 @@
     <!-- Start cookieyes banner -->
     <script>window.addEventListener('load',function(){var s=document.createElement('script');s.id='cookieyes';s.src='https://cdn-cookieyes.com/client_data/78271008c96df6c735efd415cdea6100/script.js';document.body.appendChild(s);});</script>
     <!-- End cookieyes banner -->
+  <link rel="stylesheet" href="/assets/site-chrome.css?v=2" />
 </head>
 
 <body>
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="https://myspanishnlv.com/" class="nav-logo">
-                <span class="nav-logo-text">My Spanish NLV</span>
-            </a>
-            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="https://myspanishnlv.com/">Home</a></li>
-                <li><a href="https://myspanishnlv.com/blog/">Blog</a></li>
-                <li><a href="https://myspanishnlv.com/services.html">Services</a></li>
-                <li><a href="/health-insurance.html">Health Insurance</a></li>
-                <li><a href="https://myspanishnlv.com/about.html">About</a></li>
-            </ul>
-            <a href="https://myspanishnlv.com/contact.html" class="nav-cta">Get Started</a>
-        </div>
-    </nav>
+    <nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a>
+  <button class="nav-toggle hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links nav-desktop" role="list">
+    <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+    <li><a href="/requirements.html">Requirements</a></li>
+    <li><a href="/pricing.html">Pricing</a></li>
+    <li><a href="/health-insurance.html">Health Insurance</a></li>
+    <li><a href="/how-it-works.html">How It Works</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/blog/">Guides</a></li>
+    <li><a href="https://dashboard.platinumlegalspain.com/nlv" class="nav-cta" rel="noopener noreferrer">Start My Application</a></li>
+  </ul>
+</nav>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
-        <a href="https://myspanishnlv.com/">Home</a>
-        <a href="https://myspanishnlv.com/blog/">Blog</a>
-        <a href="https://myspanishnlv.com/services.html">Services</a>
-        <a href="/health-insurance.html">Health Insurance</a>
-        <a href="https://myspanishnlv.com/about.html">About</a>
-        <a href="https://myspanishnlv.com/contact.html">Get Started</a>
-    </div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation">✕</button>
+  <a href="/">Home</a>
+  <a href="/what-is-nlv.html">What is the NLV?</a>
+  <a href="/requirements.html">Requirements</a>
+  <a href="/application-process.html">Application Process</a>
+  <a href="/health-insurance.html">Health Insurance</a>
+  <a href="/renewal/">Renewal</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/how-it-works.html">How It Works</a>
+  <a href="/faq.html">FAQ</a>
+    <a href="/blog/">Guides</a>
+    <a href="/contact.html">Contact</a>
+    <div class="mobile-menu-bottom">
+    <p class="mm-label">Ready to apply?</p>
+    <a href="https://dashboard.platinumlegalspain.com/nlv" class="mm-pill pill-red" rel="noopener noreferrer">Start My Application</a>
+    <a href="mailto:hello@myspanishnlv.com" class="mm-pill pill-outline">Contact Us</a>
+  </div>
+</div>
 
     <section class="page-hero">
         <div class="page-hero-inner">
@@ -293,14 +302,12 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-logo">
-                    <span class="nav-logo-text">My Spanish NLV</span>
-                </div>
-                <p class="footer-tagline">Spain's Non-Lucrative Visa specialists. Expert guidance from application to approval.</p>
-                <p class="footer-email"><a href="mailto:hello@myspanishnlv.com">hello@myspanishnlv.com</a></p>
+    <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a></div>
+      <p class="footer-tagline">Spain's Non-Lucrative Visa — online application service managed by experienced immigration specialists at Platinum Legal Spain.</p>
+      <p class="footer-email"><a href="mailto:hello@myspanishnlv.com">hello@myspanishnlv.com</a></p>
         <p class="footer-heading" style="margin-top:1.25rem;">Health Insurance</p>
         <ul class="footer-list">
           <li><a href="/health-insurance.html">NLV Health Insurance</a></li>
@@ -308,49 +315,55 @@
           <li><a href="/health-insurance/insurance-only.html">Insurance Without Our Visa Service</a></li>
           <li><a href="/renewal/health-insurance-renewal.html">Renewal Insurance</a></li>
         </ul>
-            </div>
-            <div class="footer-col">
-                <p class="footer-heading">Visa Guides</p>
-                <ul class="footer-list">
-                    <li><a href="https://myspanishnlv.com/">Home</a></li>
-                    <li><a href="https://myspanishnlv.com/blog/">Blog</a></li>
-                    <li><a href="https://myspanishnlv.com/services.html">Services</a></li>
-                    <li><a href="https://myspanishnlv.com/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <p class="footer-heading">Resources</p>
-                <ul class="footer-list">
-                    <li><a href="https://myspanishnlv.com/application-process/step-by-step-guide.html">Step-by-Step Guide</a></li>
-                    <li><a href="https://myspanishnlv.com/application-process/processing-time.html">Processing Times</a></li>
-                    <li><a href="https://myspanishnlv.com/blog/">Blog</a></li>
-                    <li><a href="https://myspanishnlv.com/contact.html">Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <p class="footer-heading">Legal</p>
-                <ul class="footer-list">
-                    <li><a href="https://myspanishnlv.com/legal/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="https://myspanishnlv.com/legal/terms-and-conditions.html">Terms of Service</a></li>
-                    <li><a href="https://myspanishnlv.com/legal/cookies-policy.html">Cookie Policy</a></li>
-                    <li><a href="https://myspanishnlv.com/legal/legal-statement.html">Disclaimer</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer-copy">&copy; 2026 My Spanish NLV. All rights reserved. | Retail Consulting UK Ltd.</p>
-            <div class="footer-legal">
-                <a href="https://myspanishnlv.com/legal/privacy-policy.html">Privacy Policy</a>
-                <a href="https://myspanishnlv.com/legal/terms-and-conditions.html">Terms</a>
-                <a href="https://myspanishnlv.com/legal/cookies-policy.html">Cookies</a>
-            </div>
-        </div>
-    </footer>
-
-    <div class="mobile-bar">
-        <a href="https://myspanishnlv.com/contact.html" class="bar-apply">Apply Now &#8594;</a>
-        <a href="mailto:hello@myspanishnlv.com" class="bar-contact">Email Us</a>
     </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-list">
+        <li><a href="/services/non-lucrative-visa-application.html">NLV Application</a></li>
+        <li><a href="/services/non-lucrative-visa-renewal.html">NLV Renewal</a></li>
+        <li><a href="/services/family-application.html">Family Application</a></li>
+        <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-list">
+        <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+        <li><a href="/requirements.html">NLV Requirements</a></li>
+        <li><a href="/how-it-works.html">How It Works</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+              <p class="footer-heading">Other Visa Types</p>
+        <a href="https://myspanishvisa.com" class="footer-pill" rel="noopener noreferrer">My Spanish Visa</a>
+        <a href="https://myspanishdnv.com" class="footer-pill" rel="noopener noreferrer">Digital Nomad Visa</a>
+        <a href="https://myspanishstudentvisa.com" class="footer-pill" rel="noopener noreferrer">Student Visa</a>
+        <p class="footer-heading">Company</p>
+      <ul class="footer-list">
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 My Spanish NLV. Operated by Retail Consulting UK Ltd (Company No. 06711242). Legal services delivered in partnership with Platinum Legal Spain.</p>
+    <nav class="footer-legal">
+      <a href="/legal/privacy-policy.html">Privacy Policy</a>
+      <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="/legal/cookies-policy.html">Cookie Policy</a>
+      <a href="/legal/refund-policy.html">Refund Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="https://dashboard.platinumlegalspain.com/nlv" class="bar-apply" rel="noopener noreferrer">Start My Application</a>
+  <a href="mailto:hello@myspanishnlv.com" class="bar-contact">Contact Us</a>
+</div>
 
     <script>
         const hamburger = document.getElementById('hamburger');

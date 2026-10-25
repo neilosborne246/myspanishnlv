@@ -157,6 +157,7 @@
 
   <style>.about-story{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}.story-text p{font-size:1rem;color:var(--text-muted-light);line-height:1.8;margin-bottom:1.25rem;font-weight:300}.story-text p:last-child{margin-bottom:0}.story-callout{background:var(--navy-mid);border:1px solid var(--border-dark);border-left:4px solid var(--yellow);border-radius:var(--r-md);padding:2rem}.story-callout p{font-size:1rem;color:var(--text-muted-light);line-height:1.75;font-weight:300}.story-callout p + p{margin-top:1rem}.story-callout strong{color:var(--yellow);font-weight:600}.trust-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem;padding-top:3rem;border-top:1px solid var(--border-dark)}.trust-stat{text-align:center}.trust-stat-num{font-family:var(--ff-display);font-size:2.4rem;font-weight:600;color:var(--yellow);line-height:1;margin-bottom:0.4rem}.trust-stat-label{font-size:0.8rem;color:var(--text-muted-light);text-transform:uppercase;letter-spacing:0.1em}.feature-icon{font-size:1.75rem;margin-bottom:1rem;display:block}.partners-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}.partner-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:2rem}.partner-card-label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem;font-weight:600}.partner-card h3{font-family:var(--ff-display);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem}.partner-card p{font-size:0.87rem;color:var(--text-muted);line-height:1.65;margin-bottom:1rem}.partner-card a{color:var(--red);font-weight:600;font-size:0.85rem;text-decoration:none}.partner-card a:hover{color:var(--red-deep);text-decoration:underline}.partner-links{display:flex;flex-direction:column;gap:0.4rem}.platinum-block{background:var(--navy-mid);border:1px solid var(--border-dark);border-radius:var(--r-xl);padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.platinum-block p{font-size:1rem;color:var(--text-muted-light);line-height:1.8;font-weight:300}.platinum-block p + p{margin-top:1rem}.platinum-block strong{color:var(--white);font-weight:600}.platinum-block-visual{background:rgba(250,207,57,0.06);border:1px solid rgba(250,207,57,0.15);border-radius:var(--r-lg);padding:2rem;display:flex;flex-direction:column;gap:1rem}.plat-item{display:flex;align-items:flex-start;gap:0.75rem}.plat-icon{font-size:1.1rem;flex-shrink:0;margin-top:0.1rem}.plat-item p{font-size:0.87rem;color:var(--text-muted-light);line-height:1.5;margin:0;padding:0}.plat-item strong{display:block;color:var(--yellow);font-weight:600;font-size:0.85rem;margin-bottom:0.15rem}@media (max-width:900px){.about-story{grid-template-columns:1fr;gap:2rem}.trust-bar{grid-template-columns:repeat(2,1fr)}.partners-grid{grid-template-columns:1fr}.platinum-block{grid-template-columns:1fr;gap:2rem;padding:2rem}}</style>
   <link rel="stylesheet" href="/assets/nav-fit.css?v=1" />
+  <link rel="stylesheet" href="/assets/site-chrome.css?v=2" />
 </head>
 <body>
 
@@ -164,41 +165,42 @@
 
   <!-- NAV -->
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="/" class="nav-logo" aria-label="My Spanish NLV — home"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" />
-    </a>
-    <ul class="nav-links nav-desktop" role="list">
-      <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
-      <li><a href="/requirements.html">Requirements</a></li>
-      <li><a href="/pricing.html">Pricing</a></li>
-      <li><a href="/health-insurance.html">Health Insurance</a></li>
-      <li><a href="/how-it-works.html">How It Works</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
+  <a href="/" class="nav-logo"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links nav-desktop" role="list">
+    <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+    <li><a href="/requirements.html">Requirements</a></li>
+    <li><a href="/pricing.html">Pricing</a></li>
+    <li><a href="/health-insurance.html">Health Insurance</a></li>
+    <li><a href="/how-it-works.html">How It Works</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
       <li><a href="/blog/">Guides</a></li>
-      <li><a href="https://dashboard.platinumlegalspain.com/nlv" class="nav-cta">Start My Application</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    </button>
-  </nav>
+    <li><a href="https://dashboard.platinumlegalspain.com/nlv" class="nav-cta" rel="noopener noreferrer">Start My Application</a></li>
+  </ul>
+</nav>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
-    <button class="mobile-menu-close" aria-label="Close navigation menu">&#x2715;</button>
-    <a href="/what-is-nlv.html">What is the NLV?</a>
-    <a href="/requirements.html">Requirements</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/health-insurance.html">Health Insurance</a>
-    <a href="/how-it-works.html">How It Works</a>
-    <a href="/faq.html">FAQ</a>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close navigation">✕</button>
+  <a href="/">Home</a>
+  <a href="/what-is-nlv.html">What is the NLV?</a>
+  <a href="/requirements.html">Requirements</a>
+  <a href="/application-process.html">Application Process</a>
+  <a href="/health-insurance.html">Health Insurance</a>
+  <a href="/renewal/">Renewal</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/how-it-works.html">How It Works</a>
+  <a href="/faq.html">FAQ</a>
     <a href="/blog/">Guides</a>
     <a href="/contact.html">Contact</a>
     <div class="mobile-menu-bottom">
-      <a href="https://dashboard.platinumlegalspain.com/nlv" class="mm-pill pill-red">Start My Application</a>
-      <p class="mm-label">Immigration specialists &bull; clients from 12+ countries</p>
-    </div>
+    <p class="mm-label">Ready to apply?</p>
+    <a href="https://dashboard.platinumlegalspain.com/nlv" class="mm-pill pill-red" rel="noopener noreferrer">Start My Application</a>
+    <a href="mailto:hello@myspanishnlv.com" class="mm-pill pill-outline">Contact Us</a>
   </div>
+</div>
 
   <main id="main-content">
 
@@ -475,17 +477,12 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer" aria-label="Site footer">
-    <div class="footer-grid">
-      <!-- Col 1: Brand -->
-      <div>
-        <div class="footer-logo">
-          <a href="/" aria-label="My Spanish NLV — home">
-            <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a></div>
-          </a>
-        </div>
-        <p class="footer-tagline">A specialist NLV service by Platinum Legal Spain — immigration specialists helping non-EU citizens relocate to Spain.</p>
-        <p class="footer-email"><a href="mailto:hello@myspanishnlv.com">hello@myspanishnlv.com</a></p>
+  <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><a href="/"><img src="/assets/logo-horizontal-light.png" alt="My Spanish NLV" width="500" height="180" /></a></div>
+      <p class="footer-tagline">Spain's Non-Lucrative Visa — online application service managed by experienced immigration specialists at Platinum Legal Spain.</p>
+      <p class="footer-email"><a href="mailto:hello@myspanishnlv.com">hello@myspanishnlv.com</a></p>
         <p class="footer-heading" style="margin-top:1.25rem;">Health Insurance</p>
         <ul class="footer-list">
           <li><a href="/health-insurance.html">NLV Health Insurance</a></li>
@@ -493,52 +490,55 @@
           <li><a href="/health-insurance/insurance-only.html">Insurance Without Our Visa Service</a></li>
           <li><a href="/renewal/health-insurance-renewal.html">Renewal Insurance</a></li>
         </ul>
-      </div>
-      <!-- Col 2: Services -->
-      <div>
-        <p class="footer-heading">Services</p>
-        <ul class="footer-list" role="list">
-          <li><a href="https://dashboard.platinumlegalspain.com/nlv">NLV Application</a></li>
-          <li><a href="/renewal/">NLV Renewal</a></li>
-          <li><a href="/services/family-application.html">Family Application</a></li>
-          <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
-        </ul>
-      </div>
-      <!-- Col 3: Information -->
-      <div>
-        <p class="footer-heading">Information</p>
-        <ul class="footer-list" role="list">
-          <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
-          <li><a href="/requirements.html">NLV Requirements</a></li>
-          <li><a href="/how-it-works.html">How It Works</a></li>
-          <li><a href="/pricing.html">Pricing</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <!-- Col 4: Company -->
-      <div>
-                <p class="footer-heading">Other Visa Types</p>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-list">
+        <li><a href="/services/non-lucrative-visa-application.html">NLV Application</a></li>
+        <li><a href="/services/non-lucrative-visa-renewal.html">NLV Renewal</a></li>
+        <li><a href="/services/family-application.html">Family Application</a></li>
+        <li><a href="/services/appeal-rejected-nlv.html">Appeal Rejection</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-list">
+        <li><a href="/what-is-nlv.html">What is the NLV?</a></li>
+        <li><a href="/requirements.html">NLV Requirements</a></li>
+        <li><a href="/how-it-works.html">How It Works</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+              <p class="footer-heading">Other Visa Types</p>
         <a href="https://myspanishvisa.com" class="footer-pill" rel="noopener noreferrer">My Spanish Visa</a>
         <a href="https://myspanishdnv.com" class="footer-pill" rel="noopener noreferrer">Digital Nomad Visa</a>
         <a href="https://myspanishstudentvisa.com" class="footer-pill" rel="noopener noreferrer">Student Visa</a>
         <p class="footer-heading">Company</p>
-        <ul class="footer-list" role="list">
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
+      <ul class="footer-list">
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 My Spanish NLV. Operated by Retail Consulting UK Ltd (Company No. 06711242). Legal services delivered in partnership with Platinum Legal Spain.</p>
-      <nav class="footer-legal" aria-label="Legal links">
-        <a href="/legal/privacy-policy.html">Privacy Policy</a>
-        <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
-        <a href="/sitemap.xml">Sitemap</a>
-      </nav>
-    </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 My Spanish NLV. Operated by Retail Consulting UK Ltd (Company No. 06711242). Legal services delivered in partnership with Platinum Legal Spain.</p>
+    <nav class="footer-legal">
+      <a href="/legal/privacy-policy.html">Privacy Policy</a>
+      <a href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="/legal/cookies-policy.html">Cookie Policy</a>
+      <a href="/legal/refund-policy.html">Refund Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="https://dashboard.platinumlegalspain.com/nlv" class="bar-apply" rel="noopener noreferrer">Start My Application</a>
+  <a href="mailto:hello@myspanishnlv.com" class="bar-contact">Contact Us</a>
+</div>
 
   <!-- MOBILE STICKY BAR -->
   <div class="mobile-bar" aria-label="Mobile action bar">
