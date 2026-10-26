@@ -43,6 +43,33 @@ RewriteRule ^blog/healthcare-spain-retirees-nlv-access(?:\.html|/)?$ /blog/healt
 RewriteRule ^consulates/spanish-consulate-usa-nlv-guide(?:\.html|/)?$ /usa/nlv-from-usa.html [R=301,L]
 RewriteRule ^consulates/spanish-consulate-germany-nlv-guide(?:\.html|/)?$ /consulates/#germany [R=301,NE,L]
 
+# Blog retirements (26 Oct 2026): duplicate and template-bodied posts merged into the pages that answer them
+RewriteRule ^blog/nlv-renewal-income-requirements-2026(?:\.html|/)?$ /renewal/renewal-requirements.html [R=301,L]
+RewriteRule ^blog/nlv-renewal-income-requirements(?:\.html|/)?$ /renewal/renewal-requirements.html [R=301,L]
+RewriteRule ^blog/cost-of-living-spain-expat-2026(?:\.html|/)?$ /life-in-spain/cost-of-living.html [R=301,L]
+RewriteRule ^blog/cost-of-living-spain-expats(?:\.html|/)?$ /life-in-spain/cost-of-living.html [R=301,L]
+RewriteRule ^blog/can-you-live-spain-without-working-nlv(?:\.html|/)?$ /blog/can-i-live-in-spain-without-working.html [R=301,L]
+RewriteRule ^blog/biggest-myths-spain-nlv-busted(?:\.html|/)?$ /faq.html [R=301,L]
+RewriteRule ^blog/first-step-spain-nlv-checklist(?:\.html|/)?$ /application-process/step-by-step-guide.html [R=301,L]
+RewriteRule ^blog/how-does-spain-nlv-work-guide-2026(?:\.html|/)?$ /what-is-nlv.html [R=301,L]
+RewriteRule ^blog/how-many-people-move-spain-nlv-statistics(?:\.html|/)?$ /blog/how-many-people-move-to-spain-on-nlv.html [R=301,L]
+RewriteRule ^blog/how-much-income-spain-nlv-2026(?:\.html|/)?$ /requirements/income-requirements.html [R=301,L]
+RewriteRule ^blog/investment-income-spain-nlv-dividends-rental(?:\.html|/)?$ /requirements/passive-income.html [R=301,L]
+RewriteRule ^blog/is-2026-good-year-apply-spain-nlv(?:\.html|/)?$ /blog/spain-nlv-changes-2026.html [R=301,L]
+RewriteRule ^blog/is-spain-non-lucrative-visa-worth-it-2026(?:\.html|/)?$ /blog/is-nlv-right-visa-for-me.html [R=301,L]
+RewriteRule ^blog/nlv-spain-common-questions-honest-answers(?:\.html|/)?$ /faq.html [R=301,L]
+RewriteRule ^blog/pension-income-spain-nlv-proof(?:\.html|/)?$ /requirements/pension-income.html [R=301,L]
+RewriteRule ^blog/spain-nlv-2026-changes-updates(?:\.html|/)?$ /blog/spain-nlv-changes-2026.html [R=301,L]
+RewriteRule ^blog/spain-nlv-at-glance-timeline-cost(?:\.html|/)?$ /application-process/step-by-step-guide.html [R=301,L]
+RewriteRule ^blog/spain-nlv-income-requirements-2026-iprem(?:\.html|/)?$ /requirements/income-requirements.html [R=301,L]
+RewriteRule ^blog/spain-nlv-plain-english-no-jargon(?:\.html|/)?$ /what-is-nlv.html [R=301,L]
+RewriteRule ^blog/spain-nlv-vs-other-spanish-visas-comparison(?:\.html|/)?$ /compare.html [R=301,L]
+RewriteRule ^blog/what-counts-as-income-spain-nlv(?:\.html|/)?$ /requirements/income-requirements.html [R=301,L]
+RewriteRule ^blog/what-does-non-lucrative-mean(?:\.html|/)?$ /what-is-nlv.html [R=301,L]
+RewriteRule ^blog/what-is-iprem-spain-nlv(?:\.html|/)?$ /requirements/income-requirements.html [R=301,L]
+RewriteRule ^blog/what-is-spain-non-lucrative-visa-complete-2026-guide(?:\.html|/)?$ /what-is-nlv.html [R=301,L]
+RewriteRule ^blog/who-can-apply-spain-nlv-eligibility-2026(?:\.html|/)?$ /requirements.html [R=301,L]
+
 # ─── Canonical URL format: pages live at /path.html ──────────
 # index.html is served at its directory URL (/ , /blog/ …)
 RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
