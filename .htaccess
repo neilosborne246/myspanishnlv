@@ -23,6 +23,7 @@ RewriteRule ^ https://myspanishnlv.com%{REQUEST_URI} [R=301,L]
 # ─── Content consolidation 301s (duplicate posts merged) ─────
 RewriteRule ^blog/183-day-rule-spain-tax(?:\.html|/)?$ /blog/183-day-rule-spain-tax-status.html [R=301,L]
 RewriteRule ^blog/nlv-renewal-documents-2026-checklist(?:\.html|/)?$ /blog/nlv-renewal-documents-2026.html [R=301,L]
+RewriteRule ^blog/how-to-open-spanish-bank-account(?:\.html|/)?$ /blog/how-to-open-spanish-bank-account-foreigner.html [R=301,L]
 RewriteRule ^blog/how-to-track-spain-nlv-application-status(?:\.html|/)?$ /blog/can-i-track-nlv-application-status.html [R=301,L]
 RewriteRule ^blog/first-nlv-renewal-vs-second-renewal(?:\.html|/)?$ /blog/first-and-second-nlv-renewal-differences.html [R=301,L]
 RewriteRule ^legal/cookie-policy(?:\.html|/)?$ /legal/cookies-policy.html [R=301,L]
